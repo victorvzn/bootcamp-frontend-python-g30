@@ -2,6 +2,11 @@
 
 Este repositorio nos sirve para aprender el flujo de trabajo de GIT y Github.
 
+### Comandos de configuración:
+
+* git config --global user.name "Nombre"
+* git config --global user.email "correo@ejemplo.com"
+
 ### Comandos básicos:
 
 * git init

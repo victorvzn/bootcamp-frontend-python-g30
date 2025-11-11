@@ -25,6 +25,13 @@ body {
 
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Fraunces', sans-serif; */
+
+  display: flex; /* Flexbox */
+
+  justify-content: center; /* Aliamiento horizontal */
+  align-items: center; /* Alineamiento vertical */
+
+  height: 100vh; /* vh <> Viewport height */  
 }
 
 main {
@@ -33,12 +40,17 @@ main {
   width: 650px;
 
   display: flex; /* Flexbox */
+
+  min-height: 400px;
 }
 
 .photo {
   border: 1px solid blue;
 
   width: 350px;
+
+  background-image: url(images/image-product-desktop.jpg);
+  background-size: cover;
 }
 
 .content {

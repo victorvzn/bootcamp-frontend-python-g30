@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(fonts/Montserrat-VariableFont_wght.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(fonts/Montserrat-VariableFont_wght.ttf) format('truetype');
+  font-weight: 700;
+}
+
+/* TODO: descargar la fuente Fraunces desde Google fonts y usarla en el body */
+
 body {
   background-color: hsl(30, 38%, 92%);
+
+  font-size: 14px;
+
+  font-family: 'Montserrat', sans-serif;
 }

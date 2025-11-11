@@ -23,6 +23,26 @@ body {
 
   font-size: 14px;
 
-  /* font-family: 'Montserrat', sans-serif; */
-  font-family: 'Fraunces', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Fraunces', sans-serif; */
+}
+
+main {
+  border: 1px solid red;
+
+  width: 650px;
+
+  display: flex; /* Flexbox */
+}
+
+.photo {
+  border: 1px solid blue;
+
+  width: 350px;
+}
+
+.content {
+  border: 1px solid orange;
+
+  width: 300px;
 }

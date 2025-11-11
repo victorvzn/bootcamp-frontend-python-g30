@@ -45,7 +45,7 @@ main {
 }
 
 .photo {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   width: 350px;
 
@@ -54,7 +54,43 @@ main {
 }
 
 .content {
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 
   width: 300px;
+
+  padding: 28px; /* Espacio entre el borde y el contenido */
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 21px; /* 14px + 7px */
+
+  background-color: hsl(0, 0%, 100%);
+}
+
+.content h2 { /* Selectores combinados */
+  /* border: 1px solid green; */
+
+  margin: 0; /* resetea el margen de este h2 */
+
+  text-transform: uppercase;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  font-size: 14px;
+  letter-spacing: 7px;
+}
+
+/* TODO: Terminar con los estilos de las etiquetas h1 y p aplicando colores, fuentes, tamaños */
+
+h1 {
+  /* border: 1px solid green; */
+
+  margin: 0; /* resetea el margen de este h1 */
+}
+
+p {
+  /* border: 1px solid green; */
+
+  margin: 0; /* resetea el margen de este h1 */
 }

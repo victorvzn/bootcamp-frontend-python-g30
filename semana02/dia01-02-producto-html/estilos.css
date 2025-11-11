@@ -10,6 +10,12 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: 'Fraunces';
+  src: url(fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf) format('truetype');
+  font-weight: 700;
+}
+
 /* TODO: descargar la fuente Fraunces desde Google fonts y usarla en el body */
 
 body {
@@ -17,5 +23,6 @@ body {
 
   font-size: 14px;
 
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Fraunces', sans-serif;
 }

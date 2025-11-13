@@ -88,7 +88,9 @@ main {
 
   margin: 0; /* resetea el margen de este h1 */
 
-  color: red;
+  color: hsl(158, 42%, 18%);
+  font-family: 'Fraunces', sans-serif;
+  font-weight: 700;
 }
 
 .content p {
@@ -101,3 +103,19 @@ main {
   font-weight: 500; /* No es necesario viene por defecto en el navegador*/
 }
 
+.content div {
+  display: flex;
+  align-items: center; /* Alinea los elemenos hijos verticalmente*/
+  gap: 28px;
+}
+
+.content span {
+  font-family: 'Fraunces', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: hsl(158, 36%, 37%);
+}
+
+.content s {
+  color: hsl(228, 12%, 48%);
+}

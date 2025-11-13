@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teoria CSS</title>
+  <style>
+    /* Pseudo clases */
+
+    /* Actuan cuando el usuario interactúa con un elemento. */
+
+    button {
+      background-color: red;
+    }
+
+    button:hover {
+      background-color: green;
+      cursor: pointer;
+    }
+
+    /* Pseudo elementos */
+
+    /* Permiten crear partes virtuales de un elemento */
+    p {
+      color: blue;
+    }
+
+    p::before {
+      content: '🧠';
+      color: green;
+    }
+
+    p::after {
+      content: '🎃';
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <button>Click aquí!</button>
+
+  <p>Texto especial</p>
+</body>
+</html>

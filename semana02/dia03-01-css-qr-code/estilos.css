@@ -1,0 +1,17 @@
+body {
+  background-color: hsl(212, 45%, 89%);
+
+  font-size: 15px;
+}
+
+main {
+  /* border: 1px solid red; */
+
+  width: 300px;
+
+  padding: 15px;
+
+  background-color: hsl(0, 0%, 100%);
+
+  border-radius: 15px;
+}

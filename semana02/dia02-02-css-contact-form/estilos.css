@@ -49,3 +49,20 @@ textarea {
 }
 
 /* TODO: Darle estilos al boton del formulario */
+
+input[type=submit] {
+  width: 100%;
+  border: none;
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%); /* white <> #FFFFFF <> #FFF */
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+input[type=submit]:hover {
+  background-color: hsl(169, 82%, 20%);
+  cursor: pointer;
+}
+

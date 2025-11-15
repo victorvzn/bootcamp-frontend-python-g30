@@ -69,3 +69,23 @@ input[type=submit]:hover {
 .required {
   color: hsl(169, 82%, 27%);
 }
+
+.query-type {
+  border: 1px solid hsl(186, 15%, 59%);
+  display: flex;
+  gap: 4px;
+  padding: 16px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  /* display: flex;
+   */
+}

@@ -26,15 +26,31 @@ a {
   text-decoration: none;
 }
 
+/* UTILS */
+
+.wrapper {
+  /* width: 1440px; */
+  width: min(100% - 42px, 1440px);
+
+  /* border: 1px solid blue; */
+}
+
+/* HEADER SECTION */
+
 .header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin: 0 auto;
+  margin-top: 42px;
 }
 
 
 .header__nav {
   /* TODO: terminar el css de este nav */
+  display: flex;
+  gap: 42px; /* 42px = 14 * 3 */
 }

@@ -18,9 +18,30 @@
       /* box-sizing: content-box; */
       box-sizing: border-box;
     }
+
+    .bloque {
+      background-color: lightcoral;
+      display: block;  /* Valor por defecto */
+    }
+    .enlinea {
+      background-color: lightgreen;
+      display: inline; /* Valor por defecto */
+    }
+    .enlinea-bloque {
+      background-color: lightpink;
+      display: block; /* Valor por defecto del div */
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
   <div class="box">Modelo de caja</div>
+
+  <!-- tipos de cajas -->
+
+  <div class="bloque">BLOQUE</div>
+  <span class="enlinea">ENLINEA</span>
+  <div class="enlinea-bloque">ENLINEA Y BLOQUE</div>
+
 </body>
 </html>

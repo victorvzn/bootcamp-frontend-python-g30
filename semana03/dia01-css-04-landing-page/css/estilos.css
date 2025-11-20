@@ -26,6 +26,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  /* RWD para imágenes */
+  max-width: 100%;
+
+  height: auto;
+}
+
 /* UTILS */
 
 .wrapper {
@@ -66,7 +73,7 @@ a {
 /* REM : Root EM(Ancho de la letra M) o Entidad de Medida Relativa */ 
 
 .hero {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   flex-direction: column;
@@ -80,7 +87,7 @@ a {
 .hero__image {}
 
 .hero__title {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 
   /* width: 720px; */
   /* Elige el valor más pequeño entre los que le pasemos */
@@ -96,7 +103,22 @@ a {
 
 .hero__text {
   /* TODO: Terminar de aplicar los estilos al parrafo del hero */
+  width: min(100% - 3rem, 720px);
 
+  font-size: 1.2rem;
+
+  text-align: center;
 }
 
-.hero__button {}
+.hero__button {
+  font-weight: 700;
+
+  border: none;
+  border-radius: 7rem;
+  padding: 1rem;
+  min-width: 220px;
+  background-color: hsl(176, 68%, 64%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* FEATURES SECTION */

@@ -82,6 +82,11 @@ img {
 
   padding-top: 3rem; /* 3 x 14px = 42px */
   padding-bottom: 12rem; /* 12 x 14px = 168px */
+
+  background-image: url(../images/bg-curvy-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .hero__image {}
@@ -124,19 +129,37 @@ img {
 /* FEATURES SECTION */
 
 .features {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   background-color: hsl(218, 28%, 13%);
 
   display: grid;
-  grid-template-columns: 340px 340px;
+  grid-template-columns: 340px; /* MOBILE FIRST: Esta propiedad es para móviles */
   /* grid-template-rows: 240px 240px; */
   justify-content: center;
   gap: 5rem;
 }
 
+/*
+TAMAÑOS DE PANTALLA SUGERIDOS:
+
+576px  -> pantallas pequeñas (celulares)
+768px  -> pantallas pequeñas (tablets y celulares)
+992px  -> pantallas medianas (Desktop)
+1280px -> pantallas grandes (Desktops, TVs)
+*/
+
+/* MEDIA QUERY: Se aplica a dispositivos móviles, tables o desktops+ */
+
+@media (min-width: 992px) {
+  .features {
+    grid-template-columns: 340px 340px;
+  }
+}
+
+
 .feature {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 
   display: flex;
   flex-direction: column;

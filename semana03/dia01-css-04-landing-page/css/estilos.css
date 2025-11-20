@@ -63,8 +63,18 @@ a {
 
 /* TODO : Terminar el css para la sección abajo del header(hero). Usen bem para el nombrado de las clases y reutilicen la función min. */
 
+/* REM : Root EM(Ancho de la letra M) o Entidad de Medida Relativa */ 
+
 .hero {
   border: 1px solid red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* 14px * 2 = 28px = 2rem */
+
+  padding-top: 3rem; /* 3 x 14px = 42px */
+  padding-bottom: 12rem; /* 12 x 14px = 168px */
 }
 
 .hero__image {}

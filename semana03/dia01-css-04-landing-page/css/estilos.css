@@ -35,6 +35,10 @@ a {
   /* border: 1px solid blue; */
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* HEADER SECTION */
 
 .header {
@@ -57,4 +61,16 @@ a {
 
 /* HERO SECTION */
 
-/* todo: Terminar el css para la sección abajo del header(hero). Usen bem para el nombrado de las clases y reutilicen la función min. */
+/* TODO : Terminar el css para la sección abajo del header(hero). Usen bem para el nombrado de las clases y reutilicen la función min. */
+
+.hero {
+  border: 1px solid red;
+}
+
+.hero__image {}
+
+.hero__title {}
+
+.hero__text {}
+
+.hero__button {}

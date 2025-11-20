@@ -123,12 +123,37 @@ img {
 
 /* FEATURES SECTION */
 
-.features {}
+.features {
+  border: 1px solid red;
 
-.feature {}
+  background-color: hsl(218, 28%, 13%);
+
+  display: grid;
+  grid-template-columns: 340px 340px;
+  /* grid-template-rows: 240px 240px; */
+  justify-content: center;
+  gap: 5rem;
+}
+
+.feature {
+  border: 1px solid yellow;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 14px = 1rem */
+
+  /* text-align: center; */
+}
 
 .feature__image {}
 
-.feature__title {}
+.feature__title {
+  font-family: "Raleway", sans-serif;
 
-.feature__text {}
+  text-align: center;
+}
+
+.feature__text {
+  text-align: center;
+}

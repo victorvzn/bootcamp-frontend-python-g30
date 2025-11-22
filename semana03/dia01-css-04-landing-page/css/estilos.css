@@ -193,3 +193,23 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
 .productive__link {}
 
 /* TESTIMONIALS SECTION */
+
+.testimonials {
+  border: 1px solid red;
+
+  display: flex;
+  gap: 2.5rem;
+
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  background-color: hsl(218, 28%, 13%);
+}
+
+.testimonial {
+  border: 1px solid yellow;
+}
+
+.testimonial__text {}
+
+.testimonial__profile {}

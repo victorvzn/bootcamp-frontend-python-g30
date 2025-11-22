@@ -205,15 +205,51 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
 
 .testimonials--wrapper {
   display: flex;
+  flex-direction: column;
   gap: 2.5rem;
 
   margin: 0 auto;
 }
 
+/* TODO: Añadir el media query para ver las cajas de testimonios en fila con flexbox */
+
 .testimonial {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
+
+  background-color: hsl(219, 30%, 18%);
+
+  /* padding: TOP-RIGHT-BOTTOM-LEFT */
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: .5rem;
 }
 
-.testimonial__text {}
+.testimonial__text {
+  font-size: 1.4rem;
 
-.testimonial__profile {}
+  /* border: 1px solid yellow; */
+
+  margin-bottom: 2rem;
+}
+
+.testimonial__profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  font-size: .9rem;
+}
+
+.testimonial__avatar {
+  border-radius: 50%;
+}
+
+.testimonial__user h4 {
+  font-weight: 700; /* Por defecto para el h4 */
+}
+
+.testimonial__user h5 {
+  font-weight: 400;
+}

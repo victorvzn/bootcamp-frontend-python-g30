@@ -16,8 +16,9 @@ font-family: "Open Sans", sans-serif; */
 body {
   font-family: "Open Sans", sans-serif;
 
-  background-color: hsl(217, 28%, 15%);
   color: hsl(0, 0%, 100%);
+
+      background-color: hsl(218, 28%, 13%);
 }
 
 a {
@@ -38,6 +39,7 @@ img {
 .wrapper {
   /* width: 1440px; */
   width: min(100% - 42px, 1440px);
+  background-color: hsl(217, 28%, 15%);
 
   /* border: 1px solid blue; */
 }
@@ -56,7 +58,9 @@ img {
   align-items: center;
 
   margin: 0 auto;
-  margin-top: 42px;
+  padding-top: 42px;
+
+  background-color: hsl(217, 28%, 15%);
 }
 
 
@@ -87,6 +91,8 @@ img {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
+
+  background-color: hsl(217, 28%, 15%);
 }
 
 .hero__image {}
@@ -197,8 +203,8 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
 .testimonials {
   /* border: 1px solid red; */
 
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
   
   background-color: hsl(218, 28%, 13%);
 }
@@ -237,7 +243,7 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
   position: relative;
 }
 
-.testimonial:before {
+.testimonial:first-child:before {
   content: '';
 
   background-image: url(../images/bg-quotes.png);

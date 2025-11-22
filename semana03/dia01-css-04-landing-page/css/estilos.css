@@ -289,3 +289,21 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
 .testimonial__user h5 {
   font-weight: 400;
 }
+
+/* FOOTER SECTION */
+
+/* TODO: Terminar la maquetación de este footer según el diseño */
+
+.footer {
+  border: 1px solid red;
+}
+
+.footer-info {}
+
+.footer-info__description {}
+
+.footer-info__contact {}
+
+.footer-info__links {}
+
+.footer-info__social {}

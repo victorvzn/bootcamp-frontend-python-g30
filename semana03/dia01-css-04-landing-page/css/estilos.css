@@ -211,7 +211,18 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
   margin: 0 auto;
 }
 
+@media (min-width: 992px) {
+  .testimonials--wrapper {
+    flex-direction: row;
+  }
+}
+
 /* TODO: Añadir el media query para ver las cajas de testimonios en fila con flexbox */
+
+/* 
+  pseudo-elemento: :after, :before
+  selectores: ?????
+*/
 
 .testimonial {
   /* border: 1px solid yellow; */
@@ -222,6 +233,25 @@ TAMAÑOS DE PANTALLA SUGERIDOS:
   /* padding: TOP RIGHT BOTTOM LEFT */
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   border-radius: .5rem;
+
+  position: relative;
+}
+
+.testimonial:before {
+  content: '';
+
+  background-image: url(../images/bg-quotes.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  display: block;
+  width: 55px;
+  height: 45px;
+
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  z-index: -1;
 }
 
 .testimonial__text {

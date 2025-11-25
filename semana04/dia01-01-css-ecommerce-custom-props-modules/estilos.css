@@ -40,7 +40,7 @@ body {
 html {
   font-size: var(--font-size);
 
-  font: var(--custom-font);
+  /* font: var(--custom-font); */
 }
 
 img {

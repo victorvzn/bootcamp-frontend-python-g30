@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: blueviolet;
 }
 
 html {
@@ -36,4 +35,10 @@ a {
   width: min(100%, 1200px);
 
   margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

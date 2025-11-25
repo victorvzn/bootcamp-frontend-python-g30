@@ -1,3 +1,25 @@
+/* GENERALES */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
   background-color: blueviolet;
+}
+
+html {
+  font-size: 16px;
+}
+
+img {
+  /* RWD para imágenes */
+  max-width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

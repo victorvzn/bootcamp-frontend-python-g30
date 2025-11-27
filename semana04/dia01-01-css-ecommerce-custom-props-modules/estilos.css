@@ -156,3 +156,12 @@ a {
   display: flex;
   gap: 1rem;
 }
+
+@media (min-width: 992px) {
+  /* Estos estilos se aplican para tablets, desktops, + */
+  .gallery__cover {
+    border-radius: 1rem;
+  }
+}
+
+/* TODO: Ocultar el slider solo en móviles usando media queries */

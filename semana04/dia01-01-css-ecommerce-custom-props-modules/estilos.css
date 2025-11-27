@@ -162,10 +162,32 @@ a {
     border-radius: 1rem;
   }
 
+  /* TODO: Ocultar el slider solo en móviles usando media queries */
   .gallery__slider {
     display: flex;
     gap: 1rem;
   }
 }
 
-/* TODO: Ocultar el slider solo en móviles usando media queries */
+.gallery__slider div {
+  width: 90px;
+  height: 90px;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  /* background-color: green; */
+  border: 3px solid transparent;
+}
+
+.gallery__slider div:hover {
+  border: 3px solid var(--primary-orange);
+  cursor: pointer;
+}
+
+.gallery__photo--active {
+  border: 3px solid var(--primary-orange) !important;
+}
+
+.gallery__photo--active img {
+  opacity: 0.5;
+}

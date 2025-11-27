@@ -228,7 +228,18 @@ a {
   /* border: 1px solid red; */
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* TODO: Necesitamos que el precio anterior este alineado con el precio y el descuento solo en móviles */
+
+@media (min-width: 992px) {
+  .product__price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .product__price--wrapper {
@@ -317,5 +328,3 @@ a {
 
   border-radius: .6rem;
 }
-
-/* TODO: Necesitamos que el precio anterior este alineado con el precio y el descuento solo en móviles */

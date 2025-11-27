@@ -218,7 +218,41 @@ a {
   color: var(--neutral-very-dark-blue);
   line-height: 1;
 }
+
 .product__description {
   line-height: 1.5;
   color: var(--neutral-dark-grayish-blue);
+}
+
+.product__price {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.product__price--wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__amount {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.product__discount {
+  background-color: var(--neutral-very-dark-blue);
+  color: var(--neutral-white);
+
+  padding: .1rem .5rem;
+  border-radius: .3rem;
+
+  font-weight: var(--font-weight-bold);
+}
+
+.product__price-before {
+  color: var(--neutral-dark-grayish-blue);
+  text-decoration: line-through;
 }

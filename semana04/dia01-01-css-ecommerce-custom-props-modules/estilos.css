@@ -126,10 +126,20 @@ a {
   /* border: 1px solid red; */
 
   display: flex;
-  flex-direction: row;
-  gap: 5rem;
+  flex-direction: column;
+  gap: 2rem;
 
-  padding: 4rem;
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  /* Estos estilos se aplican para tablets, desktops, + */
+  .product-detail {
+    flex-direction: row;
+    gap: 5rem;
+
+    padding: 4rem;
+  }
 }
 
 .gallery {

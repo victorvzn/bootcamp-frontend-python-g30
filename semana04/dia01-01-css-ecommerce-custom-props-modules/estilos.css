@@ -153,14 +153,18 @@ a {
 .gallery__slider {
   /* border: 1px solid green; */
 
-  display: flex;
-  gap: 1rem;
+  display: none;
 }
 
 @media (min-width: 992px) {
   /* Estos estilos se aplican para tablets, desktops, + */
   .gallery__cover {
     border-radius: 1rem;
+  }
+
+  .gallery__slider {
+    display: flex;
+    gap: 1rem;
   }
 }
 

@@ -131,3 +131,18 @@ a {
 
   padding: 4rem;
 }
+
+.gallery {
+  /* border: 1px solid blue; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery__slider {
+  /* border: 1px solid green; */
+
+  display: flex;
+  gap: 1rem;
+}

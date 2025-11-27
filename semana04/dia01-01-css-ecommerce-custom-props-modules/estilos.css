@@ -195,3 +195,30 @@ a {
 /* PRODUCT SECTION */
 
 /* TODO: Terminar la sección de producto */
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 2rem 0;
+}
+
+.product__subtitle {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  color: var(--neutral-dark-grayish-blue);
+  letter-spacing: .1rem;
+}
+
+.product__title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-very-dark-blue);
+  line-height: 1;
+}
+.product__description {
+  line-height: 1.5;
+  color: var(--neutral-dark-grayish-blue);
+}

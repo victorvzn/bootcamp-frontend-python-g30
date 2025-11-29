@@ -1,3 +1,23 @@
+/* VARIABLES */
+
+:root {
+  /* FONTS */
+
+  --font-primary: 'Poppins', sans-serif;
+  --font-size: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* COLORS */
+
+  --primary-color-gold: #FFB742;
+  --primary-color-dark-blue: #393646;
+  --primary-color-dark-violet: #4F4557;
+  --primary-color-light-violet: #6D5D6E;
+  --primary-color-white: #FFFFFF;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 

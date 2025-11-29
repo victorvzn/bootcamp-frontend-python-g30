@@ -109,6 +109,88 @@ a {
 
 /* HERO SECTION */
 
-.stack {
+/* TODO: Terminar el diseño con css de la sección hero usando la maquetación en html */
 
+.hero {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  padding: 4rem;
+}
+
+.hero--bg {
+  background-image: url(images/bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+
+.hero__greeting {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero__greeting span {
+  color: var(--primary-color-gold);
+  text-decoration: underline;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero__description {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-regular);
+}
+
+.hero__photo {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.stack {
+  /* border: 1px solid yellow; */
+
+  display: grid;
+  /* grid-template-columns: 150px 150px 150px 150px 150px 150px; */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .stack {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.stack__wrapper {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack__box {
+  background-color: var(--primary-color-dark-violet);
+  width: 7rem; /* 112px = 7rem */
+  height: 7rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stack__title {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
 }

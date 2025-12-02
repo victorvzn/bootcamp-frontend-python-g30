@@ -174,14 +174,24 @@ console.log(cadena2.length)
 console.log(cadena1.length === cadena2.length) // true
 
 // 2. Retornar true si un numero es menor que 40 sino devolver false
+const unNumero = 28
+console.log('EJERCICIO 2:', unNumero < 40)
 
 // 3. Retornar True si un numero es menor que 60 sino devolver False
+console.log('EJERCICIO 3:', 88 < 60)
 
 // 4. Retornar True si un numero es par sino devolver False
+console.log('EJERCICIO 4:', 8 % 2 === 0)
 
 // 5. Retornar True si un numero es impar sino devolver
+console.log('EJERCICIO 5:', 7 % 2 !== 0)
 
 // 6. calcular el area de un triangulo y mostrar su resultado si tenemos los valores base y altura
+
+const base = 10
+const altura = 15
+const area = (base * altura) / 2
+console.log('EJERCICIO 6:', area)
 
 // 7. (TODO) Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
 

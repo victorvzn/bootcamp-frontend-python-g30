@@ -41,3 +41,31 @@ console.log(typeof 'Sebastian')     // string
 console.log(typeof "Sebastian")     // string
 console.log(typeof 'Sebastian\'s')  // string
 
+// BOOLEAN -> Verdadero(true) o False(false)
+
+console.log(true)
+console.log(false)
+
+console.log(typeof true) // boolean
+
+// UNDEFINED, lo asigna Javascript
+
+let nombre // No hemos asignado un valor a la variable
+
+console.log(nombre)         // undefined
+console.log(typeof nombre)  // undefined
+
+// NULL, no tiene un valor una variable
+
+// let apellido = undefined // ❌
+let apellido = null
+
+console.log(apellido)
+console.log(typeof apellido) // object❓
+
+// BigInt (Tipo de dato primitivo)
+// Symbol (Tipo de dato primitivo)
+
+
+// VARIABLES Y CONSTANTES
+

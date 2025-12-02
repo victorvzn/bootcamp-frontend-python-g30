@@ -197,3 +197,75 @@ console.log('EJERCICIO 6:', area)
 
 // 8. (TODO) Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla:
 // SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%
+
+// CONDICIONALES (IF)
+
+if (true) {
+  // Bloque: Se ejecuta este bloque si la condición es verdadera 
+}
+
+const numero = 35
+
+const esPar = numero % 2 === 0 // Devuelve un boolean (true o false)
+
+if (esPar) {
+  console.log('CONDICIONALES (IF)', 'Este número es par')
+}
+
+// CONDICIONALES (IF, ELSE)
+
+if (true) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else {
+  // Se ejecuta este bloque si la condición es falsa
+}
+
+if (esPar) {
+  console.log('CONDICIONALES (IF, ELSE)', 'Este número es par')
+} else {
+  console.log('CONDICIONALES (IF, ELSE)', 'Este número es impar')
+}
+
+// CONDICIONALES (IF, ELSE IF, ELSE)
+
+if (true) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else if (true) {
+  // Se ejecuta este bloque si esta condición es verdadera
+} else if (true) {
+  // Se ejecuta este bloque si esta condición es verdadera
+} else {
+  // Se ejecuta este bloque si ninguna condición se cumple
+}
+
+let hero = 'Spiderman'
+
+if (hero === 'Batman') {
+  console.log('Hola soy Bruce')
+} else if (hero === 'Spiderman') {
+  console.log('Hola soy Peter')
+} else if (hero === 'Ironman') {
+  console.log('Hola soy Tony')
+} else { // opcional
+  console.log('No eres un heroe aun :(')
+}
+
+// CONDICIONALES (SWITCH)
+
+hero = 'Batman'
+
+switch (hero) {
+  case 'Batman':
+    console.log('Hola soy Bruce')
+    break
+  case 'Spiderman':
+    console.log('Hola soy Peter')
+    break
+  case 'Ironman':
+    console.log('Hola soy Tony')
+    break
+  default: // Opcional
+    console.log('No eres un heroe aun :(')
+}
+
+// 

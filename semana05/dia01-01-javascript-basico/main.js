@@ -103,3 +103,87 @@ edad2 = 87
 
 console.log(edad2)
 console.log(typeof edad2)
+
+// OPERADORES MATEMÁTICOS
+
+console.log(1 + 2)
+console.log(edad2 + 2)
+console.log(3 - 2)
+console.log(2 * 2)
+console.log(1 / 2) // 0.5
+console.log(1 % 2) // El residuo es 1 => Operador para obtener el residuo de una división
+console.log(2 ** 3) // Dos elevado al cubo -> 8
+console.log(Math.pow(2, 3)) // Hace lo mismo que 2 ** 3
+
+// OPERADOR DE ASIGNACIÓN (=)
+
+const genero = 'femenino'
+
+console.log(genero)
+
+// OPERADORES DE COMPARACIÓN
+
+// Operador de igualdad no estricta (==)
+// Devuelve un valor boolean (true o false)
+// Este operador no toma en cuenta el tipo de dato al comparar sino solo sus valores
+
+console.log(1 == 1) // true
+console.log(1 == '1') // true ❓
+console.log(1 != '1') // false ❓
+
+// Operador de igualdad estricta (===)
+// Devuelve un valor boolean (true o false)
+// Este operador toma en cuenta el tipo de dato y sus valores al comparar
+
+console.log(1 === 1) // true
+console.log(1 === '1') // false ✅
+console.log(1 !== '1') // true ✅
+
+// OPERADORES LÓGICOS (AND, OR, NEGACIÓN)
+
+console.log(true && false) // false -> AND (Se tienen que cumplir los dos lados de la comparación)
+console.log(true && true) // true -> AND (Se tienen que cumplir los dos lados de la comparación)
+
+console.log(true || true) // true -> OR (Se tiene que cumplir solo un lado de la comparación o ambos lados)
+console.log(true || false) // true -> OR (Se tiene que cumplir solo un lado de la comparación o ambos lados)
+console.log(false || true) // true -> OR (Se tiene que cumplir solo un lado de la comparación o ambos lados)
+console.log(false || false) // false -> OR (Se tiene que cumplir solo un lado de la comparación o ambos lados)
+
+console.log(!false) // true -> Negación (Transforma el valor a su contrario)
+
+// OPERACIÓN DE CADENA (CONCATENACIÓN)
+
+const saludo = 'Hola'
+const nombreCompleto = 'Victor Villazón'
+const miEdad = 39
+
+// Hola, Victor Villazón. Tienes 39 años.
+console.log(saludo + nombreCompleto + miEdad) // HolaVictor Villazón39 ❓
+console.log(saludo + " " + nombreCompleto + ". Tienes " + miEdad + ' años.')
+
+// EJERCICIOS
+
+// 1. Retorna true si dos strings tienen la misma longitud sino devolver false
+
+const cadena1 = 'codigo'
+const cadena2 = 'cadaga'
+
+console.log(cadena1.length)
+console.log(cadena2.length)
+
+console.log(cadena1.length === cadena2.length) // true
+
+// 2. Retornar true si un numero es menor que 40 sino devolver false
+
+// 3. Retornar True si un numero es menor que 60 sino devolver False
+
+// 4. Retornar True si un numero es par sino devolver False
+
+// 5. Retornar True si un numero es impar sino devolver
+
+// 6. calcular el area de un triangulo y mostrar su resultado si tenemos los valores base y altura
+
+// 7. (TODO) Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
+
+// 8. (TODO) Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla:
+// SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%

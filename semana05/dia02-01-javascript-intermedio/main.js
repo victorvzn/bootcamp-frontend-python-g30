@@ -124,3 +124,24 @@ console.log(welcome.indexOf('script')) // 10
 
 // TIPOS DE DATOS NO PRIMITIVOS (ARRAYS, OBJECTS)
 
+// ARRAYS
+
+// Un arreglo va a contener elementos de cualquier tipo de dato: cadenas, números, booleans, null, undefined, funciones, arrays, objetos, etc.
+
+// Declarar un arreglo
+const arregloVacio = []
+const arregloConNombres = ['Victor', 'Liliana', 'Marcial', 'Mariana']
+const listaConValores = [1, 2, 3, 'Victor', 'Villazón', true, null, undefined, [6, 7, 8]]
+
+const listaConFunciones = [
+  function () {
+    console.log('Hola función')
+  },
+  'edad',
+  123
+]
+
+console.log(arregloVacio)
+console.log(arregloConNombres)
+console.log(listaConValores)
+console.log(listaConFunciones)

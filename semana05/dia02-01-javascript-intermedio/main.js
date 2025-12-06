@@ -34,3 +34,10 @@ function imprimirUnNombre(nombre, nivel = 'el mejor') {
 imprimirUnNombre() // ¡Hola soy undefined! ❓
 imprimirUnNombre('David', 'Fullstack') // ¡Hola soy David! Y soy Fullstack 😎
 imprimirUnNombre('Diego') // ¡Hola soy Diego! Y soy el mejor 😎
+
+// EJERCICIOS
+
+// 1. Usando funciones determinar si la edad de una persona es mayor de edad o menor de edad mostrando 'Mayor de edad' o 'Menor de edad.
+
+// 2. Retornar true si un numero es primo sino devolver false
+// Pista: un numero primo es divisible por sí mismo y por 1

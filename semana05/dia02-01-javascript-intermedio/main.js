@@ -19,3 +19,18 @@ function imprimirMiNombre() {
 }
 
 imprimirMiNombre()
+
+// Funciones con parámetros y valores por defecto
+
+function imprimirUnNombre(nombre, nivel = 'el mejor') {
+  // if (!nivel) { ❌
+  //   nivel = 'el mejor'
+  // }
+
+  console.log('¡Hola soy ' + nombre + '!')
+  console.log('Y soy ' + nivel)
+}
+
+imprimirUnNombre() // ¡Hola soy undefined! ❓
+imprimirUnNombre('David', 'Fullstack') // ¡Hola soy David! Y soy Fullstack 😎
+imprimirUnNombre('Diego') // ¡Hola soy Diego! Y soy el mejor 😎

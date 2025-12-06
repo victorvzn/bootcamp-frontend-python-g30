@@ -145,3 +145,23 @@ console.log(arregloVacio)
 console.log(arregloConNombres)
 console.log(listaConValores)
 console.log(listaConFunciones)
+
+// Lectura de los elementos de un arreglo
+
+console.log(arregloConNombres[0]) // Victor
+console.log(arregloConNombres[3]) // Mariana
+
+console.log(listaConValores[0]) // 1
+console.log(listaConValores[4]) // Villazón
+console.log(listaConValores[5]) // true
+console.log(listaConValores[100]) // undefined
+console.log(listaConValores[8]) // (3) [6, 7, 8] -> Devolvio un arreglo
+console.log(listaConValores[8][1]) // 7 -> Así accedemos a un elemento de un arreglo dentro de otro arreglo
+
+console.log(listaConFunciones[0]) // Aquí devuelve la declaración de la función sin ejecutarla
+console.log(listaConFunciones[0]()) // Estamos ejecutando la función que está en el índice 0 del arreglo
+
+// ¿Cómo sabemos la longitud de un arreglo?
+
+console.log(arregloConNombres.length) // 4
+console.log(listaConValores.length) // 9

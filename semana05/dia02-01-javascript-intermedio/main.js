@@ -102,3 +102,25 @@ function esMayorOMenorDeEdadConRetorno(edad) {
 const resultado = esMayorOMenorDeEdadConRetorno(39)
 
 console.log('RESULTADO:', resultado)
+
+// MÉTODOS DE CADENAS
+
+const welcome = ' Hola Javascript '
+
+console.log(welcome)
+console.log(welcome.length)
+console.log(welcome.toUpperCase())
+console.log(welcome.toLowerCase())
+console.log(welcome.trim()) // Remueve los espacios en blanco al inicio y al final de la cadena
+
+const avatar = 'Hola @me'
+
+console.log(avatar)
+console.log(avatar.concat('victorvzn')) // Hola @mevictorvzn
+console.log(avatar.replace('me', 'victorvzn')) // Hola @victorvzn
+console.log(avatar.slice(0, 5)) // Retorno una parte de la cadena tomando la posición/índice de inicio y final en los parámetros
+console.log(welcome.indexOf('script')) // 10
+
+
+// TIPOS DE DATOS NO PRIMITIVOS (ARRAYS, OBJECTS)
+

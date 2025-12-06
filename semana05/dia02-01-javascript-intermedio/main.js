@@ -37,7 +37,20 @@ imprimirUnNombre('Diego') // ¡Hola soy Diego! Y soy el mejor 😎
 
 // EJERCICIOS
 
-// 1. Usando funciones determinar si la edad de una persona es mayor de edad o menor de edad mostrando 'Mayor de edad' o 'Menor de edad.
+// 1. Usando funciones determinar si la edad de una persona es mayor o menor de edad mostrando 'Mayor de edad' o 'Menor de edad.
+
+function esMayorOMenorDeEdad(edad) {
+  if (edad >= 18) { // si es true se ejecuta
+    console.log('Mayor de edad')
+  } else { // si es false se ejecuta
+    console.log('Menor de edad')
+  }
+}
+
+esMayorOMenorDeEdad(39) // Mayor de edad
+esMayorOMenorDeEdad(8)  // Menor de edad
+esMayorOMenorDeEdad(17)  // Menor de edad
 
 // 2. Retornar true si un numero es primo sino devolver false
 // Pista: un numero primo es divisible por sí mismo y por 1
+

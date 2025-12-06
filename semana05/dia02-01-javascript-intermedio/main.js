@@ -227,3 +227,85 @@ let invitados = ["Ana", "Luis", "María", "Pedro", "Carla"];
 // 06 - Elimina al primer invitado de la lista.
 // 07 - Muestra cuántos invitados hay actualmente.
 // 08 - Reemplaza el segundo invitado de la lista por otro nombre.
+
+
+// EJERCICIOS DE ALGORITMOS
+
+// 1. Encontrar el mayor número
+// Dado un arreglo de números, encuentra el número más grande sin usar Math.max.
+
+const valores = [3, 10, 2, 8]
+
+function encontrarMayor(numeros) {
+  let mayor = numeros[0]
+
+  for(let i = 1; i < numeros.length; i++) {
+    console.log(i, numeros[i])
+    if (numeros[i] > mayor) {
+      mayor = numeros[i]
+    }
+  }
+
+  console.log(mayor)
+  return mayor
+}
+
+console.log(encontrarMayor(valores)) // 10
+
+// 2. Contar pares e impares
+// Dado un arreglo de números, muestra cuántos son pares y cuántos son impares.
+
+function contarParesImpares(numeros) {
+  let pares = 0 // Acumulador
+  let impares = 0 // Acumulador
+
+  for(let i = 0; i < numeros.length; i++) {
+    if (numeros[i] % 2 === 0) { // Es un numero par
+      pares = pares + 1
+    } else {
+      impares = impares + 1
+    }
+  }
+
+  console.log(pares, impares)
+  return [pares, impares]
+}
+
+console.log(contarParesImpares(valores)) // [3, 1]
+
+// 3. Invertir un arreglo
+// Dado un arreglo, crea otro arreglo con los elementos en orden inverso sin usar .reverse().
+// 👉 Pista: usa un bucle desde el final hacia el inicio.
+
+// 4. Buscar un elemento
+// Pide un nombre y verifica si está en el arreglo de invitados.
+// Si está, muestra el índice donde se encuentra; si no, indica que no existe.
+
+// 5. Eliminar duplicados
+// Dado un arreglo con nombres repetidos, crea un nuevo arreglo sin duplicados.
+// 👉 Pista: usa un arreglo auxiliar y verifica antes de insertar.
+
+// 6. Palíndromo con arreglos
+// Verifica si una palabra es palíndroma (se lee igual al derecho y al revés).
+// 👉 Pista: conviértela en arreglo de letras y compárala con su inverso.
+
+// 7. Suma de todos los elementos
+// Dado un arreglo de números, calcula la suma total de sus elementos sin usar reduce.
+// 👉 Pista: acumula con un for.
+
+// 8. Número más repetido
+// Dado un arreglo de números, encuentra cuál aparece más veces.
+// 👉 Pista: usa un contador para cada número.
+
+// 9. Ordenar un arreglo (básico)
+// Ordena un arreglo de números de menor a mayor sin usar .sort().
+// 👉 Pista: algoritmo de burbuja (intercambiar elementos si están desordenados).
+
+// 10. Intercalar dos arreglos
+// Dado dos arreglos [1,2,3] y ['a','b','c'], crea uno nuevo: [1,'a',2,'b',3,'c'].
+// 👉 Pista: usa un for que recorra en paralelo.
+
+
+// TODO: Investiguen cada uno de los métodos de arreglos que muestro en la siguiente línea
+
+// MÉTODOS DE ARREGLOS (includes, map, filter, reduce, every, some, flat, flatMap, etc.)

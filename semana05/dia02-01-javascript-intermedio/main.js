@@ -308,4 +308,4 @@ console.log(contarParesImpares(valores)) // [3, 1]
 
 // TODO: Investiguen cada uno de los métodos de arreglos que muestro en la siguiente línea
 
-// MÉTODOS DE ARREGLOS (includes, map, filter, reduce, every, some, flat, flatMap, etc.)
+// MÉTODOS DE ARREGLOS (includes, map, filter, reduce, every, some, flat, flatMap, sort,forEach, etc.)

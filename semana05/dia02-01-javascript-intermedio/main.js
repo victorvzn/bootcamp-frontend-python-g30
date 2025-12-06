@@ -121,6 +121,12 @@ console.log(avatar.replace('me', 'victorvzn')) // Hola @victorvzn
 console.log(avatar.slice(0, 5)) // Retorno una parte de la cadena tomando la posición/índice de inicio y final en los parámetros
 console.log(welcome.indexOf('script')) // 10
 
+// Split y join para cadenas
+
+console.log('frutas'.split('')) // Convierte en un arreglo y separa cada letra de la cadena
+console.log('frutas'.split('').join(','))
+console.log('frutas'.split('').join(''))
+
 
 // TIPOS DE DATOS NO PRIMITIVOS (ARRAYS, OBJECTS)
 
@@ -163,5 +169,61 @@ console.log(listaConFunciones[0]()) // Estamos ejecutando la función que está 
 
 // ¿Cómo sabemos la longitud de un arreglo?
 
-console.log(arregloConNombres.length) // 4
-console.log(listaConValores.length) // 9
+console.log(arregloConNombres.length) // 4 elemento
+console.log(listaConValores.length) // 9 elementos
+
+// Escritura en arreglos
+
+console.log(listaConValores[0]) // 1
+listaConValores[0] = 'Grethel'
+listaConValores[4] = 'Juan'
+console.log(listaConValores) // ['Grethel', ...]
+
+// OPERACIONES SOBRE LOS ARREGLOS
+
+// Insertar nuevos elementos al final del arreglo
+
+arregloConNombres.push('Javascript')
+arregloConNombres.push('CSS')
+
+console.log(arregloConNombres)
+
+// Remover elementos del final del arreglo
+
+arregloConNombres.pop()
+
+console.log(arregloConNombres)
+
+// Insertar un elemento en una posición determinada
+
+const arreglo = [...arregloConNombres] // Copia o Clone del arregloNombres
+
+console.log(arreglo)
+arreglo.splice(1, 0, 'HTML')
+console.log(arreglo)
+console.log(arregloConNombres) // Queda intacto
+
+// Eliminar un elemento
+
+console.log(arregloConNombres)
+arregloConNombres.splice(2, 1)
+console.log(arregloConNombres)
+
+// Otras funciones: slice (Investiguen)
+
+// EJERCICIOS
+
+// EJERCICIO: Lista de Invitados
+
+// Tienen un arreglo con los nombres de las personas invitadas a una fiesta.
+
+// 01 - Declara el arreglo con 5 nombres.
+let invitados = ["Ana", "Luis", "María", "Pedro", "Carla"];
+
+// 02 - Muestra en consola todos los nombres.
+// 03 - Agrega un nuevo invitado al final de la lista.
+// 04 - Inserta un invitado al inicio de la lista.
+// 05 - Elimina al último invitado de la lista.
+// 06 - Elimina al primer invitado de la lista.
+// 07 - Muestra cuántos invitados hay actualmente.
+// 08 - Reemplaza el segundo invitado de la lista por otro nombre.

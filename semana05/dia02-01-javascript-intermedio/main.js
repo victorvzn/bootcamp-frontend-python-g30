@@ -337,3 +337,8 @@ const lenguajesFiltrados = languages.filter(
 console.log('FILTER', lenguajesFiltrados) // ['javascript', 'C', 'c++']
 console.log(languages)
 
+// TODO: EJERCICIO - Busca solo las personas cuyo nombre empieza con una vocal 
+
+const lista = ["Ana", "Luis", "Oscar", "Elena", "Pedro"];
+
+// Resultado esperado: ["Ana", "Oscar", "Elena"]

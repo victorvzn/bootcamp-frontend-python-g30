@@ -480,3 +480,41 @@ const correos = ["test@gmail.com", "infohotmail.com", "admin@outlook.com"];
 const nums2 = [10, 55, 120, 80, 200];
 
 
+// OBJETOS, Tipo de dato no primitivo
+
+/*
+  {
+    key: value,
+    key1: value1,
+    key2: value2,
+  }
+*/
+
+const miObjetoVacio = {} // 👁 Esto es un objeto
+
+const miObjeto = {
+  nombre: 'Victor',
+  apellido: 'Villazón',
+  colorFavorito: 'verde',
+  edad: 39,
+  esMayorDeEdad: true,
+  coloresFavoritos: ['azúl', 'rojo', 'morado'],
+  'mi edad': 39,
+  cursos: [
+    {
+      nombre: 'Matemática',
+      nota: 18
+    }, {
+      nombre: 'Algoritmos',
+      nota: 14
+    }
+  ],
+  devolverCursosAprobados: function () {
+    return this.cursos.filter(function(curso) {
+      return curso.nota > 14
+    })
+  }
+}
+
+console.log(miObjetoVacio)
+console.log(miObjeto)

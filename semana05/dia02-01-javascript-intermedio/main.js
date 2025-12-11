@@ -371,10 +371,37 @@ const compras = [
 // Resuelve lo siguiente:
 
 // includes: Verifica si el cliente compró "queso".
-console.log()
+console.log(compras.includes('queso')) // true
 // filter: Crea un nuevo arreglo que contenga solo las manzanas que se compraron.
-console.log()
+console.log(compras.filter(function(producto) {
+  return producto === 'manzana'
+}))
 // map: Convierte cada producto en un arreglo que contenga: El nombre del producto y La cantidad de letras que tiene. Por ejemplo: "pan" → ["pan", 3]
-console.log()
+console.log(compras.map(function(producto) {
+  return [producto, producto.length]
+}))
 // reduce: Cuenta cuántos productos en total compró el cliente.
 console.log()
+
+// Método REDUCE, nos ayuda a tomar los valores de un arreglo y sumarlos.
+
+const numeros = [3, 40, 100, 7, 50] // 200
+
+let acumulador = 0
+
+for(let i=0; i < numeros.length; i++) {
+  console.log(i, numeros[i])
+  acumulador = acumulador + numeros[i]
+}
+
+console.log(acumulador)
+
+// Vamos a usar reduce
+
+const sumatoria = numeros.reduce(
+  function(acumulador, valorActual) {
+    return acumulador + valorActual
+  }, 0
+)
+
+console.log(sumatoria)

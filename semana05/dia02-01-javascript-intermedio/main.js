@@ -405,3 +405,56 @@ const sumatoria = numeros.reduce(
 )
 
 console.log(sumatoria)
+
+// Método SORT y TOSORTED, nos ayuda a ordenar un arreglo de elementos.
+// SORT: ⚠ ⚠ ⚠ Mute el arreglo original. Ordena cadenas de texto.
+
+// [...leguajesDeProgramacion]: esta sintáxis copia el arreglo original en un nuevo arreglo
+
+const leguajesDeProgramacion =  ['javascript', 'php', 'python', 'C', 'c++', 'java', 'python']
+
+const copiaDeLenguajes = [...leguajesDeProgramacion]
+const ordenandoLenguajes = copiaDeLenguajes.sort()
+
+const ordenandoLanguajesMejorado = leguajesDeProgramacion.toSorted()
+
+console.log(ordenandoLenguajes)
+console.log(copiaDeLenguajes)
+console.log(ordenandoLanguajesMejorado)
+console.log(leguajesDeProgramacion)
+
+const edades = [25, 12, 10, 89, 32, 81, 3]
+
+console.log(edades.sort()) // [10, 12, 25, 3, 32, 81, 89]
+
+const ordenandoEdadesAsc = [...edades].sort(
+  function(a, b) {
+    // Si el resultado es negativo -> a va antes que b
+    // Si el resultado es positivo -> b va antes que a
+    // Si es 0 -> son iguales -> ni a ni b se intercambian
+    return a - b
+  }
+)
+
+const ordenandoEdadesDesc = [...edades].sort(
+  function(a, b) {
+    return b - a
+  }
+)
+
+console.log(ordenandoEdadesAsc)
+console.log(ordenandoEdadesDesc)
+
+// Método FOREACH, nos ayuda a recorrer un arreglo sin tener ningún retorno de datos
+
+const miArreglo = []
+
+languages.forEach(
+  function(language, index) {
+    if (index > 3) {
+      miArreglo.push('hola--' + language)
+    }
+  }
+)
+
+console.log(miArreglo)

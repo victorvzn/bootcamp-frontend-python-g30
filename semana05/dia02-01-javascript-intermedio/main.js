@@ -342,3 +342,39 @@ console.log(languages)
 const lista = ["Ana", "Luis", "Oscar", "Elena", "Pedro"];
 
 // Resultado esperado: ["Ana", "Oscar", "Elena"]
+
+// Método MAP, devuelve un arreglo y modifica cada elemento pasando una función(callback)
+// El map siempre devuelve un arreglo nuevo
+
+const nombresConAsterisco = languages.map(function(lenguaje) {
+  return lenguaje + '*'
+})
+
+console.log('MAP', nombresConAsterisco)
+console.log(languages)
+
+// EJERCICIO: Análisis de compras
+// Tienes un arreglo con los nombres de productos que un cliente compró en una tienda:
+
+const compras = [
+  "manzana",
+  "pan",
+  "leche",
+  "manzana",
+  "queso",
+  "huevo",
+  "pan",
+  "jugo",
+  "manzana"
+];
+
+// Resuelve lo siguiente:
+
+// includes: Verifica si el cliente compró "queso".
+console.log()
+// filter: Crea un nuevo arreglo que contenga solo las manzanas que se compraron.
+console.log()
+// map: Convierte cada producto en un arreglo que contenga: El nombre del producto y La cantidad de letras que tiene. Por ejemplo: "pan" → ["pan", 3]
+console.log()
+// reduce: Cuenta cuántos productos en total compró el cliente.
+console.log()

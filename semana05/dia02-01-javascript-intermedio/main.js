@@ -499,7 +499,7 @@ const miObjeto = {
   edad: 39,
   esMayorDeEdad: true,
   coloresFavoritos: ['azúl', 'rojo', 'morado'],
-  'mi edad': 39,
+  'mi edad': 44,
   cursos: [
     {
       nombre: 'Matemática',
@@ -518,3 +518,26 @@ const miObjeto = {
 
 console.log(miObjetoVacio)
 console.log(miObjeto)
+
+// Leer los campos de un objeto (notación de punto y de corchete)
+
+console.log(miObjeto.nombre) // Victor
+console.log(miObjeto.apellido) // Villazón
+console.log(miObjeto.edad) // 39
+
+// console.log(miObjeto.mi edad) // BAD ❌ Uncaught SyntaxError: missing ) after argument list
+console.log(miObjeto['mi edad']) // OK ✅ -> 44
+
+console.log(miObjeto.coloresFavoritos) // ['azúl', 'rojo', 'morado']
+console.log(miObjeto.coloresFavoritos[1]) // rojo
+
+console.log(miObjeto.cursos)
+console.log(miObjeto.cursos[1]) // {nombre: 'Algoritmos', nota: 14}
+console.log(miObjeto.cursos[1].nombre) // Algoritmos
+console.log(miObjeto.cursos[1].nota) // 14
+console.log(miObjeto.cursos[1]['nota']) // 14
+
+console.log(miObjeto.devolverCursosAprobados) // Nos devuelve la definición de la función
+console.log(miObjeto.devolverCursosAprobados())
+
+// ELIMINAR PROPIEDADES DE UN OBJETO

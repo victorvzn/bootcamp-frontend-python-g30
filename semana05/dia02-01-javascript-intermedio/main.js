@@ -309,3 +309,31 @@ console.log(contarParesImpares(valores)) // [3, 1]
 // TODO: Investiguen cada uno de los métodos de arreglos que muestro en la siguiente línea
 
 // MÉTODOS DE ARREGLOS (includes, map, filter, reduce, every, some, flat, flatMap, sort,forEach, etc.)
+
+const languages = ['javascript', 'php', 'python', 'C', 'c++', 'java', 'python']
+
+// Método INCLUDES, verifica si exise cierto valor(tipo de dato) en un arreglo y devuelve un resultado booleano(true o false).
+
+console.log(languages)
+
+console.log('INCLUDES', languages.includes('java')) // true
+console.log('INCLUDES', languages.includes('cobol')) // false
+console.log('INCLUDES', languages.includes('PYTHON')) // false
+console.log('INCLUDES', languages.includes('python')) // true
+
+// Método FILTER, nos ayuda a ubicar un elemeneto dentro de un arreglo usando una condicion y devuelve un nuevo arreglo con los resultados.
+
+const lenguajesFiltrados = languages.filter(
+  function(lenguaje) {
+    // return false
+    // return lenguaje === 'java'
+    // return lenguaje === 'python'
+    // return lenguaje === 'Python'
+    // return lenguaje.includes('c') || lenguaje.includes('C')
+    return lenguaje.toLowerCase().includes('c') 
+  }
+)
+
+console.log('FILTER', lenguajesFiltrados) // ['javascript', 'C', 'c++']
+console.log(languages)
+

@@ -541,3 +541,47 @@ console.log(miObjeto.devolverCursosAprobados) // Nos devuelve la definición de 
 console.log(miObjeto.devolverCursosAprobados())
 
 // ELIMINAR PROPIEDADES DE UN OBJETO
+
+const copiaDeMiObjeto = {...miObjeto}
+
+delete copiaDeMiObjeto.colorFavorito
+delete copiaDeMiObjeto.cursos
+delete copiaDeMiObjeto['mi edad']
+
+console.log(copiaDeMiObjeto) // Si cambia por que hemos eliminado las propiedades en este objeto clonado
+console.log(miObjeto) // Se mantiene igual por que es el arreglo original
+
+// Otra forma de eliminar el valor de un objeto
+
+copiaDeMiObjeto.esMayorDeEdad = undefined // Estamos marcando la propiedad como que ya no la vamos a usar
+
+console.log(copiaDeMiObjeto)
+
+// Insertar una nueva propiedad a un objeto
+
+miObjeto.platilloFavorito = 'Ceviche de conchas negras'
+miObjeto['juegos$favoritos'] = ['Crash Tean Racing', 'Mario', 'Minecraft']
+
+console.log(miObjeto)
+
+// TODO: Ejercicio - Manejos de las frutas
+
+const frutas = [
+  { nombre: "manzana", precio: 2, cantidad: 10 },
+  { nombre: "banana", precio: 1, cantidad: 0 },
+  { nombre: "naranja", precio: 1.5, cantidad: 5 },
+  { nombre: "kiwi", precio: 3, cantidad: 2 },
+  { nombre: "uva", precio: 2.5, cantidad: 20 }
+]
+
+// 1. includes → ¿tenemos "kiwi"?
+
+// 2. map → obtener solo los precios
+
+// 3. filter → frutas con stock disponible
+
+// 4. reduce → calcular el valor total del inventario
+
+// 5. every → ¿todas las frutas tienen precio mayor a 0?
+
+// 6. some → ¿hay alguna fruta sin stock?

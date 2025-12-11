@@ -9,7 +9,7 @@
 // contarVocales('Programación') → 5
 
 function contarVocales(texto) {
- return texto.split('')
+  return texto.split('')
 }
 
 console.log(contarVocales('Hola Mundo'))

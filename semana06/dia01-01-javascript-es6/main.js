@@ -198,7 +198,6 @@ console.log(miSuma(4, 5)) // 9
 console.log(miSuma(listaDeNumeros)) // ❌ 4,5undefined
 console.log(miSuma(...listaDeNumeros)) // 9
 
-
 // Otro ejemplo
 
 const listaDeNumeros2 = [25, 8, 288, 65, 76, 189, 66]

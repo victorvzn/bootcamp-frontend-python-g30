@@ -42,10 +42,10 @@ console.log(colorFavorito, cursos, edad)
 
 // Alias en destructuring de objetos
 
-
 const {
   colorFavorito: colorFavoritoValor,
   cursos: cursosValor
 } = miObjeto
 
 console.log(colorFavoritoValor, cursosValor)
+

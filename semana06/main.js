@@ -137,6 +137,35 @@ nombreDeLafuncion()
 
 const nombreDeLafuncion2 = () => {}
 
+// Funciones con parámetros en un línea
+
+const imprimirSaludoArrowFn = () => console.log('Hola a todos nuevamente!')
+
+imprimirSaludoArrowFn()
+
+// Funciones con parámetros en un línea con retorno implícito
+
+const sumaArrowFn = (numero1, numero2) => numero1 + numero2
+
+console.log(sumaArrowFn(2, 5))
+
+// Funciones con parámetros y retorno explícito en múltiples líneas con retorno explícito
+
+const saludoEnMayusculasArrowFn = (nombre) => {
+  const nombreEnMayusculas = nombre.toUpperCase()
+
+  return 'Hola ' + nombreEnMayusculas + '!!'
+}
+
+console.log(saludoEnMayusculasArrowFn('victor'))
 
 
 
+const otroSaludoEnMayusculasArrowFn = (nombre = 'Anónimo') => {
+  const nombreEnMayusculas = nombre.toUpperCase()
+
+  return 'Hola ' + nombreEnMayusculas + '!!'
+}
+
+console.log(otroSaludoEnMayusculasArrowFn())
+console.log(otroSaludoEnMayusculasArrowFn('victor'))

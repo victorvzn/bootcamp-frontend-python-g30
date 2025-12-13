@@ -119,3 +119,24 @@ console.log(Object.keys(producto)) // Obtenemos solo las claves(keys) del objeto
 console.log(Object.values(producto)) // Obtenemos solo las valores(values) del objeto y son devueltas en un arreglo
 console.log(Object.entries(producto)) // Convertimos un objeto en un arreglo y lo que devuelve es un arreglo de arreglos.
 
+// Arrow function, let, const, template strings, destructuring, clases, módulos, promesas
+
+// ARROW FUNCTION: () => {}
+
+// Es una forma corta de escribir una función
+
+// Forma larga
+
+function nombreDeLafuncion(parametro1, parametro2) {
+  return 'Hola a todos'
+}
+
+nombreDeLafuncion()
+
+// Forma corta con Arrow function
+
+const nombreDeLafuncion2 = () => {}
+
+
+
+

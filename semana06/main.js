@@ -49,3 +49,73 @@ const {
 
 console.log(colorFavoritoValor, cursosValor)
 
+// DESTRUCTURING EN ARRAYS
+
+const amigos = ['leo', 'marcial', 'diego', 'andrea', 'victor']
+
+// Sin destructuring
+
+const amigoLeo = amigos[0]
+const amigaAndrea = amigos[3]
+const amigoVictor = amigos[4]
+
+console.log(amigoLeo, amigaAndrea, amigoVictor)
+
+// Con destructuring
+
+const [amigo1, amigo2, , amigo3, amigo4] = amigos
+
+console.log(amigo1, amigo2, amigo3, amigo4)
+
+// DESTRUCTURING + SPREAD OPERATOR (...)
+
+// Una sintaxis que permite expandinf los elementos de un iterable(arrays, strings, objetos)
+
+const [miMejorAmigo, ...misNoTanAmigos] = amigos
+
+console.log(miMejorAmigo, misNoTanAmigos)
+
+// SPREAD OPERADOR EN OBJETOS
+
+// Extrae los propiedades de un objeto/arreglo para reutilizar en otros objetos/arreglos
+
+const producto = {
+  nombre: 'Laptop',
+  precio: 7599,
+  categoria: 'tech'
+}
+
+const cliente = {
+  nombre: 'David',
+  isVip: true
+}
+
+// ¿Cómo juntamos las propiedades producto y cliente en un solo objeto?
+
+console.log(producto + cliente) // ❌ 💔 😵 [object Object][object Object]
+
+const nuevoObjeto1 = { producto: producto, cliente: cliente }
+
+console.log(nuevoObjeto1) // {producto: {…}, cliente: {…}}
+
+const nuevoObjeto2 = { ...producto, ...cliente }
+
+console.log(nuevoObjeto2) // El nombre del producto fue sobreescrito ❓ ¡CUIDADO!
+
+// SPREAD OPERATOR EVITANDO "COLISIONES DE PROPIEDADES"
+
+const nuevoObjetoSinColisiones = {
+  producto: producto,
+  cliente: cliente
+}
+
+console.log(nuevoObjetoSinColisiones)
+console.log(nuevoObjetoSinColisiones.producto.nombre)
+console.log(nuevoObjetoSinColisiones.cliente.nombre)
+
+// OTROS MÉTODOS DE OBJETOS
+
+console.log(Object.keys(producto)) // Obtenemos solo las claves(keys) del objeto y son devueltas en un arreglo
+console.log(Object.values(producto)) // Obtenemos solo las valores(values) del objeto y son devueltas en un arreglo
+console.log(Object.entries(producto)) // Convertimos un objeto en un arreglo y lo que devuelve es un arreglo de arreglos.
+

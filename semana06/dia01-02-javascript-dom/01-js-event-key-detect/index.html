@@ -26,7 +26,22 @@
   </main>
 
   <script>
-    console.log('Hola')
+    const tecla = document.getElementById('tecla')
+    const caracter = document.getElementById('caracter')
+
+    // console.log({ tecla })
+    // console.log(tecla.textContent) // Lectura de propiedades
+    // tecla.textContent = '999999' // Escribiendo sobre los atributos del elemento html
+
+    document.addEventListener('keydown', function(event) {
+      console.log('Presionaste una tecla!!', event)
+
+      console.log(event.keyCode) // Código ASCII
+      console.log(event.key) // Letra presionada
+
+      tecla.textContent = event.keyCode
+      caracter.textContent = event.key
+    })
   </script>
 </body>
 </html>

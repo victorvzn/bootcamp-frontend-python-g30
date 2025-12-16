@@ -32,6 +32,8 @@ buttons.forEach(function(button) {
     } else if (botonTexto === '=') {
       // Paso 3. Cuando presionamos el botón '='
       // Aquí realizamos las operaciones en base al número actual y el operando
+
+      // TODO: Añadir la lógica para soportar las operaciones de resta y multiplicación
       numeroActual = Number(operando) + Number(numeroActual)
     } else {
       // Paso 1. Evaluar cuando presionamos algún número

@@ -23,10 +23,24 @@ taskAdd.addEventListener('click', function(event) {
   // DONE: 01 Añadir el elemento li al elemento con la clase task__list
   const li = document.createElement('li')
 
-  // TODO: 02 Añadir el elemento span al elemento li
-  // TODO: 03 Añadir el elemento button al elemento li
-  
-  li.textContent = 'hola a todos'
+  // TODO: 04 Añadir un input tipo checkbox al li
+   const checkbox = document.createElement('input')
+   checkbox.setAttribute('type', 'checkbox') // <input type="checkbox" />
+   li.appendChild(checkbox) // Añadiendo el checkbox al li
+
+  // DONE: 02 Añadir el elemento span al elemento li
+  const span = document.createElement('span')
+  span.textContent = taskInput.value
+  li.appendChild(span)
+
+  // DONE: 03 Añadir el elemento button al elemento li
+  const button = document.createElement('button')
+  button.textContent = 'Borrar'
+  li.appendChild(button)
+
+  // li.textContent = 'hola a todos'
 
   taskList.appendChild(li)
+
+  taskInput.value = '' // Limpiamos la caja de texto después de crear la tarea
 })

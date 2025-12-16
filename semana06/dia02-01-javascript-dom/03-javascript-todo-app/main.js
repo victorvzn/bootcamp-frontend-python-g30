@@ -44,3 +44,17 @@ taskAdd.addEventListener('click', function(event) {
 
   taskInput.value = '' // Limpiamos la caja de texto después de crear la tarea
 })
+
+taskList.addEventListener('click', function(event) {
+  console.log('Hice click en cualquier parte de la lista ul')
+
+  const target = event.target // Elemento presionado
+
+  // console.log({ target })
+
+  if (target.tagName === 'BUTTON') {
+    console.log('Eliminando tarea...', { el: target.parentElement }) // Elemento padre
+
+    target.parentElement.remove()
+  }
+})

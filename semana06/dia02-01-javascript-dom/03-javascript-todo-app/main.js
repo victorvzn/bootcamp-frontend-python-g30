@@ -20,5 +20,13 @@ taskAdd.addEventListener('click', function(event) {
   // console.log(button)
   // document.body.appendChild(button)
 
-  // TODO: 01 Añadir el elemento li al elemento con la clase task__list
+  // DONE: 01 Añadir el elemento li al elemento con la clase task__list
+  const li = document.createElement('li')
+
+  // TODO: 02 Añadir el elemento span al elemento li
+  // TODO: 03 Añadir el elemento button al elemento li
+  
+  li.textContent = 'hola a todos'
+
+  taskList.appendChild(li)
 })

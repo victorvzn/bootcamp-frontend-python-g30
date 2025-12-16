@@ -57,4 +57,9 @@ taskList.addEventListener('click', function(event) {
 
     target.parentElement.remove()
   }
+
+  // TODO: Mediante el checkbox deber tachar el texto del span para completar la tarea
+  if(target.tagName === 'INPUT' && target.type === 'checkbox') {
+    target.classList.toggle('checked')
+  }
 })

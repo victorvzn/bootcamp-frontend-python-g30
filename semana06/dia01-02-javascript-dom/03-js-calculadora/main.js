@@ -23,5 +23,22 @@ buttons.forEach(function(button) {
     console.log(botonTexto)
 
     // TODO: Agregar la lógica de la calculadora
+
+    // Paso 2. Evaluamos el operador seleccionado
+    if('+-*'.includes(botonTexto)) {
+      operador = botonTexto
+      operando = Number(numeroActual) // Guardamos temporalmente el número actual
+      numeroActual = 0
+    } else if (botonTexto === '=') {
+      // Paso 3. Cuando presionamos el botón '='
+      // Aquí realizamos las operaciones en base al número actual y el operando
+      numeroActual = Number(operando) + Number(numeroActual)
+    } else {
+      // Paso 1. Evaluar cuando presionamos algún número
+      numeroActual = Number(numeroActual + botonTexto)
+    }
+
+
+    inputDisplay.value = numeroActual
   })
 })

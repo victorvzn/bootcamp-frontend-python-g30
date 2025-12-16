@@ -34,12 +34,23 @@ buttons.forEach(function(button) {
       // Aquí realizamos las operaciones en base al número actual y el operando
 
       // TODO: Añadir la lógica para soportar las operaciones de resta y multiplicación
-      numeroActual = Number(operando) + Number(numeroActual)
+      if (operador === '+') {
+        numeroActual = Number(operando) + Number(numeroActual)
+      } else if (operador === '-') {
+        numeroActual = Number(operando) - Number(numeroActual)
+      } else if (operador === '*') {
+        numeroActual = Number(operando) * Number(numeroActual)
+      }
+    } else if (botonTexto === 'CE') {
+      // Paso 4. Cuando presionamos el botón 'CE'
+      // Limpiamos operando, operador y el numeroActual(input)
+      numeroActual = '0'
+      operador = ''
+      operando = ''
     } else {
       // Paso 1. Evaluar cuando presionamos algún número
       numeroActual = Number(numeroActual + botonTexto)
     }
-
 
     inputDisplay.value = numeroActual
   })

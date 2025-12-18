@@ -33,31 +33,21 @@
 
     <!-- TODO: Aplicar los estilos con tailwind a la lista de tareas -->
 
-    <ul class="task__list">
-      <li>
+    <ul class="task__list flex flex-col gap-2 mt-4">
+      <li class="flex gap-4 py-2 items-center justify-center">
         <input type="checkbox" />
-        <div>
+        <div class="w-full">
           Tarea 1
         </div>
-        <div>
-          <button>
+        <div class="flex gap-2">
+          <button
+            class="border border-green-700 font-medium text-sm text-green-700 px-2 py-1 rounded-lg hover:bg-green-700 hover:text-white duration-300 cursor-pointer"
+          >
             Editar
           </button>
-          <button>
-            Remover
-          </button>
-        </div>
-      </li>
-      <li>
-        <input type="checkbox" />
-        <div>
-          Tarea 1
-        </div>
-        <div>
-          <button>
-            Editar
-          </button>
-          <button>
+          <button
+            class="border border-red-700 font-medium text-sm text-red-700 px-2 py-1 rounded-lg hover:bg-red-700 hover:text-white duration-300 cursor-pointer"
+          >
             Remover
           </button>
         </div>

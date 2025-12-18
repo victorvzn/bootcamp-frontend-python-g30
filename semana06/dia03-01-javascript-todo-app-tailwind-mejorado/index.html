@@ -3,10 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Lista de tareas (Mejorado)</title>
 </head>
 <body>
-  
+  <main class="task">
+    <section>
+      <h1 class="task__title">
+        Lista de tareas (Mejorado)
+      </h1>
+
+      <label>
+        Ingresa una tarea
+        <input
+          class="task__input"
+          type="text"
+          placeholder="Ej. Aprender javascript"
+        />
+      </label>
+
+      <div>
+        <button class="task__clear">
+          Limpiar tareas completadas
+        </button>
+      </div>
+    </section>
+
+    <ul class="task__list">
+      <li>
+        <input type="checkbox" />
+        <div>
+          Tarea 1
+        </div>
+        <div>
+          <button>
+            Editar
+          </button>
+          <button>
+            Remover
+          </button>
+        </div>
+      </li>
+      <li>
+        <input type="checkbox" />
+        <div>
+          Tarea 1
+        </div>
+        <div>
+          <button>
+            Editar
+          </button>
+          <button>
+            Remover
+          </button>
+        </div>
+      </li>
+    </ul>
+  </main>
 
   <script src="main.js"></script>
 </body>

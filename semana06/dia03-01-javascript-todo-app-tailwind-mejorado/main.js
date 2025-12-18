@@ -63,7 +63,17 @@ taskInput.addEventListener('keydown', function(event) {
     // const value = event.target.value
     const { value } = event.target // target es un objeto
 
-    console.log(value)
+    const newTask = {
+      id: crypto.randomUUID(),
+      title: value,
+      completed: false
+    }
+
+    console.log(newTask)
+
+    tasks.push(newTask)
+
+    renderTasks(tasks)
   }
 })
 

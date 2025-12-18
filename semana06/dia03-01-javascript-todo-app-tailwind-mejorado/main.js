@@ -20,6 +20,39 @@ let tasks = [
   }
 ]
 
+function renderTasks(tasks = []) {
+  // console.log('Renderizando tasks...', tasks)
+  let lista = ''
+
+  tasks.forEach(task => {
+    // console.log(task)
+
+    // lista = lista + '<li>' + task.title + ' </li>'
+    lista = lista + `
+      <li class="flex gap-4 py-2 items-center justify-center">
+        <input type="checkbox" />
+        <div class="w-full">
+          ${task.title}
+        </div>
+        <div class="flex gap-2">
+          <button
+            class="border border-green-700 font-medium text-sm text-green-700 px-2 py-1 rounded-lg hover:bg-green-700 hover:text-white duration-300 cursor-pointer"
+          >
+            Editar
+          </button>
+          <button
+            class="border border-red-700 font-medium text-sm text-red-700 px-2 py-1 rounded-lg hover:bg-red-700 hover:text-white duration-300 cursor-pointer"
+          >
+            Remover
+          </button>
+        </div>
+      </li>
+    `
+  })
+
+  console.log(lista)
+  taskList.innerHTML = lista
+}
 
 // TODO - 01 Al presionar enter en la caja de texto debemos agregr una nueva tarea a la lista
 
@@ -33,3 +66,5 @@ taskInput.addEventListener('keydown', function(event) {
     console.log(value)
   }
 })
+
+renderTasks(tasks)

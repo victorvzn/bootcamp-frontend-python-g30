@@ -42,6 +42,7 @@ function renderTasks(tasks = []) {
           </button>
           <button
             class="border border-red-700 font-medium text-sm text-red-700 px-2 py-1 rounded-lg hover:bg-red-700 hover:text-white duration-300 cursor-pointer"
+            data-id="${task.id}"
           >
             Remover
           </button>
@@ -74,7 +75,28 @@ taskInput.addEventListener('keydown', function(event) {
     tasks.push(newTask)
 
     renderTasks(tasks)
+
+    taskInput.value = ''
   }
 })
+
+taskList.addEventListener('click', (event) => {
+  const { target } = event
+
+  if (target.tagName === 'BUTTON' && target.textContent.includes('Remover')) {
+    console.log('Eliminando tarea...')
+    const { id } = target.dataset // Id que queremos eliminar en data-id
+
+    console.log(id)
+
+    tasks = tasks.filter(task => task.id !== id)
+
+    renderTasks(tasks)
+  }
+
+  // TODO: Al presionar el check debe completarse la tarea en el arreglo de tasks
+})
+
+// TODO: Al hacer click en el botón 'Limpiar tareas completadas' debemos remover todas las tareas completadas. Hay que llamar al método render también.
 
 renderTasks(tasks)

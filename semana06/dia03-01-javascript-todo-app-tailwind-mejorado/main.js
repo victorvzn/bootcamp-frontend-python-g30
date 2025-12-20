@@ -35,7 +35,7 @@ function renderTasks(tasks = []) {
           data-id="${task.id}"
           ${task.completed ? 'checked' : ''}
         />
-        <div class="w-full">
+        <div class="w-full ${task.completed ? 'line-through text-red-500' : ''}">
           ${task.title}
         </div>
         <div class="flex gap-2">
@@ -120,5 +120,11 @@ taskList.addEventListener('click', (event) => {
 })
 
 // TODO: Al hacer click en el botón 'Limpiar tareas completadas' debemos remover todas las tareas completadas. Hay que llamar al método render también.
+taskClear.addEventListener('click', function(event) {
+  tasks = tasks.filter(task => !task.completed)
+
+  renderTasks(tasks)
+})
+
 
 renderTasks(tasks)

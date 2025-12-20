@@ -30,7 +30,7 @@ function renderTasks(tasks = []) {
     // lista = lista + '<li>' + task.title + ' </li>'
     lista = lista + `
       <li class="flex gap-4 py-2 items-center justify-center">
-        <input type="checkbox" />
+        <input type="checkbox" data-id="${task.id}" />
         <div class="w-full">
           ${task.title}
         </div>
@@ -95,6 +95,13 @@ taskList.addEventListener('click', (event) => {
   }
 
   // TODO: Al presionar el check debe completarse la tarea en el arreglo de tasks
+  if (target.tagName === 'INPUT' && target.type === 'checkbox') {
+    console.log('Completando tarea...')
+
+    const { id } = target.dataset
+
+    
+  }
 })
 
 // TODO: Al hacer click en el botón 'Limpiar tareas completadas' debemos remover todas las tareas completadas. Hay que llamar al método render también.

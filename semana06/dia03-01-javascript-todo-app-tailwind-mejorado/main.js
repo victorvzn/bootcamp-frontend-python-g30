@@ -30,7 +30,11 @@ function renderTasks(tasks = []) {
     // lista = lista + '<li>' + task.title + ' </li>'
     lista = lista + `
       <li class="flex gap-4 py-2 items-center justify-center">
-        <input type="checkbox" data-id="${task.id}" />
+        <input
+          type="checkbox"
+          data-id="${task.id}"
+          ${task.completed ? 'checked' : ''}
+        />
         <div class="w-full">
           ${task.title}
         </div>
@@ -100,7 +104,18 @@ taskList.addEventListener('click', (event) => {
 
     const { id } = target.dataset
 
-    
+    const tasksSelectedIndex = tasks.findIndex(task => {
+      return task.id === id
+    }) // Esto nos ayuda a buscar una tarea por id
+
+    tasks[tasksSelectedIndex] = {
+      ...tasks[tasksSelectedIndex],
+      completed: !tasks[tasksSelectedIndex].completed
+    }
+
+    renderTasks(tasks)
+
+    console.log(tasks)
   }
 })
 

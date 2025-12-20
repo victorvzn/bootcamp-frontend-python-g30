@@ -25,7 +25,19 @@
     localStorage.setItem('curso', JSON.stringify({ name: 'Algoritmos', nota: 19 }))
 
     // Lectura de LS
-    
+    console.log(localStorage.getItem('frutas'))
+    console.log(localStorage.getItem('colores'))
+    console.log(localStorage.getItem('persona'))
+    console.log(localStorage.getItem('persona2'))
+    console.log(typeof localStorage.getItem('persona2'))
+    console.log(JSON.parse(localStorage.getItem('persona2'))) // Objeto de javascript usando el metodo parse
+    console.log(JSON.parse(localStorage.getItem('colores2')))
+
+    // ¿Qué pasaria si no existe la clave que estamos buscando?
+    console.log(localStorage.getItem('keyQueNoExiste')) // null -> Podemos usarlo para validar que no existe la key en LS
+
+    // Eliminar elementos en LS
+    localStorage.removeItem('frutas')
   </script>
 </body>
 </html>

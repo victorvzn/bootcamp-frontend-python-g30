@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localstorage</title>
+</head>
+<body>
+  <h1>Localstorage</h1>
+
+  <p>Es una forma de mentener los datos guardados en el navegador.</p>
+
+  <script>
+    // Localstorage:
+    // Lo encontramos en el Inspector/application
+
+    // Escritura de LS
+    localStorage.setItem('frutas', 'manzana,pera,plátano')
+    localStorage.setItem('colores', ['rojo', 'verde', 'amarillo'])
+    localStorage.setItem('persona', { edad: 39 })
+    localStorage.setItem('numero', 289)
+    localStorage.setItem('isVip', true)
+    localStorage.setItem('colores2', JSON.stringify(['rojo', 'verde', 'amarillo']))
+    localStorage.setItem('persona2', JSON.stringify({ edad: 39 }))
+    localStorage.setItem('curso', JSON.stringify({ name: 'Algoritmos', nota: 19 }))
+
+    // Lectura de LS
+    
+  </script>
+</body>
+</html>

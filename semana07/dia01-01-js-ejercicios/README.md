@@ -100,7 +100,13 @@ Los regalos son cadenas de texto y los materiales son caracteres . Tu tarea es e
 [1, 2, 3, 4, 5, -5].some(numero => numero % 2 === 0);
 
 function manufacture(gifts, materials) {
-  return []
+  return gifts.filter((gift) => {
+    const copiaDelRegalo = [...gift]
+
+    return copiaDelRegalo.every(letraDelRegalo => {
+      return materials.includes(letraDelRegalo)
+    })
+  })
 }
 
 const gifts1 = ['tren', 'oso', 'pelota']

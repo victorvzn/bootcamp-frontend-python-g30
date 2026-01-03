@@ -28,3 +28,12 @@ const preguntas = [
     answerList: ['null', 'object', 'undefined']
   }
 ]
+
+let correctAnswersCounter = 0 // Contador
+
+let currentQuestionIndex = 0
+
+function renderQuestions() {
+}
+
+renderQuestions()

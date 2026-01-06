@@ -85,6 +85,10 @@ function respondQuestion(event, questionSelected) {
   })
 }
 
+function showResults(event) {
+  // TODO: Terminar la pantalla de mostrar resultados con los datos respectivos para que sean dinámicos.
+}
+
 function renderQuestions() {
   const currentQuestion = questions[currentQuestionIndex]
 
@@ -137,7 +141,8 @@ function renderQuestions() {
         </button>
         
         <button
-          class="text-white border border-blue-300 bg-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2"
+          class="${(currentQuestionIndex === questions.length - 1) ? '' : 'hidden' } text-white border border-blue-300 bg-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2"
+          onclick="showResults(event)"
         >
           Mostrar resultados
         </button>

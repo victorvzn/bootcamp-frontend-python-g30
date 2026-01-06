@@ -60,6 +60,15 @@ function prevQuestion(event) {
   renderQuestions()
 }
 
+function respondQuestion(event, questionSelected) {
+  console.log(questionSelected)
+  const currentQuestion = questions[currentQuestionIndex]
+
+  // TODO: Incrementar el número de respuestas correctas (correctAnswersCounter)
+
+  // TODO: Mostrar las respuetas correctas e incorrectas con sus colores respectivos
+}
+
 function renderQuestions() {
   const currentQuestion = questions[currentQuestionIndex]
 
@@ -74,16 +83,22 @@ function renderQuestions() {
       <div class="flex flex-col items-start mb-10">
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+          onclick="respondQuestion(event, 0)"
+          data-answer="0"
         >
           ${currentQuestion.answerList[0]}
         </button>
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+          onclick="respondQuestion(event, 1)"
+          data-answer="1"
         >
           ${currentQuestion.answerList[1]}
         </button>
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+          onclick="respondQuestion(event, 2)"
+          data-answer="2"
         >
           ${currentQuestion.answerList[2]}
         </button>

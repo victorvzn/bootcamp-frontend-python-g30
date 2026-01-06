@@ -38,6 +38,10 @@ const questionAndResults = document.getElementById('questions-and-results')
 function nextQuestion(event) {
   // TODO: Validar que no tenemos más preguntas para mostrar
 
+  if (currentQuestionIndex >= questions.length - 1) {
+    return
+  }
+
   currentQuestionIndex = currentQuestionIndex + 1
   console.log(currentQuestionIndex)
 
@@ -46,6 +50,14 @@ function nextQuestion(event) {
 
 function prevQuestion(event) {
   // TODO: Añadir el botón "Anterior" con su funcionalidad respectiva
+
+  if (currentQuestionIndex <= 0) {
+    return
+  }
+
+  currentQuestionIndex = currentQuestionIndex - 1
+
+  renderQuestions()
 }
 
 function renderQuestions() {

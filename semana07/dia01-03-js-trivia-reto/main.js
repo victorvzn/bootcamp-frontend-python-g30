@@ -66,7 +66,7 @@ function respondQuestion(event, questionSelected) {
 
   // TODO: Incrementar el número de respuestas correctas (correctAnswersCounter)
 
-  // TODO: Mostrar las respuetas correctas e incorrectas con sus colores respectivos
+  // TODO: Mostrar las respuestas correctas e incorrectas con sus colores respectivos
 }
 
 function renderQuestions() {

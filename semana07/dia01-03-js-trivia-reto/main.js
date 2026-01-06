@@ -35,6 +35,19 @@ let currentQuestionIndex = 0
 
 const questionAndResults = document.getElementById('questions-and-results')
 
+function nextQuestion(event) {
+  // TODO: Validar que no tenemos más preguntas para mostrar
+
+  currentQuestionIndex = currentQuestionIndex + 1
+  console.log(currentQuestionIndex)
+
+  renderQuestions()
+}
+
+function prevQuestion(event) {
+  // TODO: Añadir el botón "Anterior" con su funcionalidad respectiva
+}
+
 function renderQuestions() {
   const currentQuestion = questions[currentQuestionIndex]
 
@@ -50,30 +63,32 @@ function renderQuestions() {
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
         >
-          Alternativa 1
+          ${currentQuestion.answerList[0]}
         </button>
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
         >
-          Alternativa 2
+          ${currentQuestion.answerList[1]}
         </button>
         <button
           class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
         >
-          Alternativa 3
+          ${currentQuestion.answerList[2]}
         </button>
-        <button class="text-white border border-red-600 bg-red-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta incorrecta 2</button>
-        <button class="text-white border border-green-600 bg-green-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta correcta 3</button>
+        <button class="hidden text-white border border-red-600 bg-red-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta incorrecta 2</button>
+        <button class="hidden text-white border border-green-600 bg-green-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta correcta 3</button>
       </div>
 
       <div class="flex justify-end">
         <button
           class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+          onclick="prevQuestion(event)"
         >
           Anterior
         </button>
         <button
           class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+          onclick="nextQuestion(event)"
         >
           Siguiente
         </button>

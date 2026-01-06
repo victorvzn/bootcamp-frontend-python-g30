@@ -1,4 +1,4 @@
-const preguntas = [
+const questions = [
   {
     id: 1111,
     order: 1,
@@ -33,7 +33,61 @@ let correctAnswersCounter = 0 // Contador
 
 let currentQuestionIndex = 0
 
+const questionAndResults = document.getElementById('questions-and-results')
+
 function renderQuestions() {
+  const currentQuestion = questions[currentQuestionIndex]
+
+  console.log(currentQuestion)
+
+  const question = `
+    <section class="flex flex-col px-4 py-6 mb-3 border rounded-lg shadow">
+      <p class="text-md font-medium text-gray-900 mb-4">
+        ${currentQuestion.order}. ${currentQuestion.question}
+      </p>
+
+      <div class="flex flex-col items-start mb-10">
+        <button
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+        >
+          Alternativa 1
+        </button>
+        <button
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+        >
+          Alternativa 2
+        </button>
+        <button
+          class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full"
+        >
+          Alternativa 3
+        </button>
+        <button class="text-white border border-red-600 bg-red-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta incorrecta 2</button>
+        <button class="text-white border border-green-600 bg-green-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full">Respuesta correcta 3</button>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+        >
+          Anterior
+        </button>
+        <button
+          class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+        >
+          Siguiente
+        </button>
+        
+        <button
+          class="text-white border border-blue-300 bg-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2"
+        >
+          Mostrar resultados
+        </button>
+      </div>
+    </section>
+  `
+
+  questionAndResults.innerHTML = question
 }
 
 renderQuestions()

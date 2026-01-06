@@ -65,8 +65,24 @@ function respondQuestion(event, questionSelected) {
   const currentQuestion = questions[currentQuestionIndex]
 
   // TODO: Incrementar el número de respuestas correctas (correctAnswersCounter)
+  if(questionSelected === currentQuestion.correctAnswer) {
+    // correctAnswersCounter++ // Forma corta
+    correctAnswersCounter = correctAnswersCounter + 1 // Forma larga 
+  }
 
   // TODO: Mostrar las respuestas correctas e incorrectas con sus colores respectivos
+
+  const answerButtons = document.querySelectorAll('[data-answer]')
+
+  answerButtons.forEach(button => {
+    if (Number(button.dataset.answer) === currentQuestion.correctAnswer) {
+      // Llegamos cuando presionamos el botón con la alternativa correcta
+      button.className = 'text-white border border-green-600 bg-green-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full'
+    } else {
+      button.className = 'text-white border border-red-600 bg-red-600 font-medium rounded-lg text-sm px-5 py-2.5 text-left mr-2 mb-2 w-full'
+    }
+    button.setAttribute('disabled', 'disabled')
+  })
 }
 
 function renderQuestions() {

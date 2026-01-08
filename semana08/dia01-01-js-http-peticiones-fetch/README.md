@@ -19,5 +19,31 @@ Fin de mi programa
 Esta línea tardará 2 segundos o 20000 ms
 ```
 
-### API
+## API
+
+Una API es un mensajero que lleva pedidos(peticiones) y trae respuestas.
+
+Nuestras aplicaciones web, no va directo a la base de datos.
+Nuestra aplicación web siempre habla con una API.
+
+Ejemplo: Cliente -> Mesero (API) -> Cocina (BACKEND o BASE DE DATOS)
+
+## HTTP + Verbos HTTP
+
+HTTP -> Es un protocolo de comunicación (Hypertext Transfer Protocol)
+
+HTTP es el lenguage que las aplicaciones web para comunicarse
+
+Ejemplos:
+http://127.0.0.1:5500
+https://youtube.com
+
+
+### Verbos HTTP
+
+GET       -> Obtener datos
+POST      -> Crear datos
+PUT       -> Actualizar datos
+PATCH     -> Actualizar datos pero de una forma más atómica
+DELETE    -> Eliminar datos
 

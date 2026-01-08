@@ -24,9 +24,28 @@ const url = "https://jsonplaceholder.typicode.com/todos"
 
 // Estados de un promesa -> pending, fulfilled y rejected
 
+// fetch(url)
+//   .then(response => response.json()) // Se ejecuta cuando la respuesta llegó correctamente y además convertimos la respuesta a un objeto JS
+//   .then(data => {
+//     console.log(data) // Aquí podemos usar el objeto JS
+//     console.log(data[0].title)
+//   })
+
+const renderTodos = (todos = []) => {
+  const divApp = document.querySelector('#app')
+
+  let todoList = ''
+
+  todos.forEach(todo => {
+    todoList += `<h2>${todo.id} - ${todo.title}</h2>`
+  })
+
+  divApp.innerHTML = todoList
+}
+
 fetch(url)
-  .then(response => response.json()) // Se ejecuta cuando la respuesta llegó correctamente y además convertimos la respuesta a un objeto JS
+  .then(respuesta => respuesta.json())
   .then(data => {
-    console.log(data) // Aquí podemos usar el objeto JS
-    console.log(data[0].title)
+    console.log(data)
+    renderTodos(data)
   })

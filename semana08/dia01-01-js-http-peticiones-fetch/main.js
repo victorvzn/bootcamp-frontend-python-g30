@@ -20,3 +20,13 @@ console.log(JSON.parse('{ "name": "Alonso" }'))
 
 const url = "https://jsonplaceholder.typicode.com/todos"
 
+// console.log(fetch(url)) // Devuelve una promesa (Promise)
+
+// Estados de un promesa -> pending, fulfilled y rejected
+
+fetch(url)
+  .then(response => response.json()) // Se ejecuta cuando la respuesta llegó correctamente y además convertimos la respuesta a un objeto JS
+  .then(data => {
+    console.log(data) // Aquí podemos usar el objeto JS
+    console.log(data[0].title)
+  })

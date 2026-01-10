@@ -1,11 +1,15 @@
+const LIMIT = 6
+
 // TODO: Listar los pokemons en la consola usando la pokeapi
 // https://pokeapi.co/api/v2/pokemon
 
 // fetch -> Devuelve una promesa
 
-const fetchPokemons = async () => {
+const fetchPokemons = async (page = 1) => {
+  const OFFSET = (page - 1) * LIMIT
+
   // const API_URL = 'https://pokeapi.co/api/v2/pokemon'
-  const API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=6&offset=0'
+  const API_URL = `https://pokeapi.co/api/v2/pokemon?limit=${LIMIT}&offset=${OFFSET}`
 
   const response = await fetch(API_URL) // Devuelve una promesa
 

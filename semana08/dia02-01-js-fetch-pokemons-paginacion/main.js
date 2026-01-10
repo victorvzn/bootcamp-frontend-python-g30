@@ -1,5 +1,7 @@
 const LIMIT = 6
 
+let page = 1
+
 // TODO: Listar los pokemons en la consola usando la pokeapi
 // https://pokeapi.co/api/v2/pokemon
 
@@ -64,6 +66,20 @@ const renderPokemons = (pokemons = []) => {
 
   pokemonsList.innerHTML = elements
 }
+
+const nextPageButton = document.querySelector('#nextPage')
+
+nextPageButton.addEventListener('click', async (event) => {
+  console.log('click next')
+
+  page = page + 1
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
+})
+
+// TODO: Implementar los botones: anterior, primero y último. Y adicionalmente actualicen la pagina actual.
 
 fetchPokemons()
   .then(data => {

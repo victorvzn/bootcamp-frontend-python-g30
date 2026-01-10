@@ -12,7 +12,21 @@ const fetchPokemons = async () => {
 
   // TODO: Agregar el id a cada pokemon dentro del arreglo results para usarlo en la imagen del pokemon
 
-  return data
+  const dataResults = data.results.map(pokemon => {
+    const id = pokemon.url.split('/').at(6)
+    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`
+
+    return {
+      ...pokemon, // name, url
+      id,
+      image
+    }
+  })
+
+  return {
+    ...data, // count, next, previous, results
+    results: dataResults
+  }
 }
 
 const renderPokemons = (pokemons = []) => {
@@ -24,13 +38,21 @@ const renderPokemons = (pokemons = []) => {
 
   pokemons.forEach(pokemon => {
     elements += `
-      <article>
+      <article class="pokemon-item">
         <h2>${pokemon.name}</h2>
         <img 
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+          src="${pokemon.image}"
           width="80"
           height="80"
         />
+        <div class="pokemon-item__buttons">
+          <button>
+            <img src="images/icon-star.svg" width="16" />
+          </button>
+          <button>
+            <img src="images/icon-edit.svg" width="16" />
+          </button>
+        </div>
       </article>
     `
   })

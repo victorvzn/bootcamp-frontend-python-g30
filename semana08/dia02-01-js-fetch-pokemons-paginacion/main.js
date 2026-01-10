@@ -1,6 +1,8 @@
 const LIMIT = 6
 
 let page = 1
+let totalPages = 0
+let count = 0
 
 // TODO: Listar los pokemons en la consola usando la pokeapi
 // https://pokeapi.co/api/v2/pokemon
@@ -51,6 +53,7 @@ const renderPokemons = (pokemons = []) => {
           src="${pokemon.image}"
           width="80"
           height="80"
+          onerror="this.src='https://placehold.co/80x80'"
         />
         <div class="pokemon-item__buttons">
           <button>
@@ -65,14 +68,59 @@ const renderPokemons = (pokemons = []) => {
   })
 
   pokemonsList.innerHTML = elements
+
+  totalPages = Math.ceil(count / LIMIT)
+
+  document.querySelector('#currentPage').textContent = `${page} de ${totalPages}`
 }
 
 const nextPageButton = document.querySelector('#nextPage')
+const prevPageButton = document.querySelector('#prevPage')
+const firstPageButton = document.querySelector('#firstPage')
+const lastPageButton = document.querySelector('#lastPage')
 
 nextPageButton.addEventListener('click', async (event) => {
   console.log('click next')
 
   page = page + 1
+
+  if (page > totalPages) {
+    page = totalPages
+
+    return
+  }
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
+})
+
+prevPageButton.addEventListener('click', async (event) => {
+  console.log('click prev')
+
+  page = page - 1
+
+  if (page <= 0) {
+    page = 1
+
+    return
+  }
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
+})
+
+firstPageButton.addEventListener('click', async (event) => {
+  page = 1
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
+})
+
+lastPageButton.addEventListener('click', async (event) => {
+  page = totalPages
 
   const dataPokemons = await fetchPokemons(page)
 
@@ -84,5 +132,8 @@ nextPageButton.addEventListener('click', async (event) => {
 fetchPokemons()
   .then(data => {
     console.log(data.results)
+
+    count = data.count
+
     renderPokemons(data.results)
   })

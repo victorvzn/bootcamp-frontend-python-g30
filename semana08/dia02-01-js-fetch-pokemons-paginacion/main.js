@@ -38,6 +38,10 @@ const fetchPokemons = async (page = 1) => {
   }
 }
 
+const toggleFavorite = () => {
+  console.log('toggleFavorite')
+}
+
 const renderPokemons = (pokemons = []) => {
   const pokemonsList = document.querySelector('#pokemonList')
 
@@ -56,7 +60,7 @@ const renderPokemons = (pokemons = []) => {
           onerror="this.src='https://placehold.co/80x80'"
         />
         <div class="pokemon-item__buttons">
-          <button>
+          <button onclick="toggleFavorite()">
             <img src="images/icon-star.svg" width="16" />
           </button>
           <button>

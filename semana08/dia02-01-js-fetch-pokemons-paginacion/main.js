@@ -26,13 +26,14 @@ const fetchPokemons = async (page = 1) => {
   const dataResults = data.results.map(pokemon => {
     const id = pokemon.url.split('/').at(6)
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`
+    const foundFavorite = pokemonFavorites.find(favorite => favorite.id === id)
 
     return {
       ...pokemon, // name, url
       id,
       image,
-      isFavorite: false
-    }
+      isFavorite: Boolean(foundFavorite) // CAST - > CONVERTIMOS UN TIPO DE DATO A OTRO: OBJETO A BOOLEAN
+    } 
   })
 
   return {

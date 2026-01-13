@@ -4,7 +4,9 @@ let page = 1
 let totalPages = 0
 let count = 0
 
-let pokemonFavorites = []
+let pokemonFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ?? []
+
+console.log(pokemonFavorites)
 
 // TODO: Listar los pokemons en la consola usando la pokeapi
 // https://pokeapi.co/api/v2/pokemon
@@ -56,6 +58,8 @@ const toggleFavorite = async (id) => {
     // Agregar el pokemon a favoritos
     pokemonFavorites.push({ id })
   }
+
+  localStorage.setItem('pokemon-favorites', JSON.stringify(pokemonFavorites))
 
   const data = await fetchPokemons(page)
   renderPokemons(data.results)

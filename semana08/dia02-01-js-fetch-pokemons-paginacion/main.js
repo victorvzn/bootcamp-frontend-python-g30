@@ -28,7 +28,8 @@ const fetchPokemons = async (page = 1) => {
     return {
       ...pokemon, // name, url
       id,
-      image
+      image,
+      isFavorite: false
     }
   })
 
@@ -61,7 +62,7 @@ const renderPokemons = (pokemons = []) => {
         />
         <div class="pokemon-item__buttons">
           <button onclick="toggleFavorite()">
-            <img src="images/icon-star.svg" width="16" />
+            <svg class="${pokemon.isFavorite ? 'is-favorite' : '' }" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" /></svg>
           </button>
           <button>
             <img src="images/icon-edit.svg" width="16" />

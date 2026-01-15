@@ -15,3 +15,18 @@ Content-Type: application/json
   "genreId": 3,
   "summary": "G31 la películas más esperado del año"
 }
+
+### Borrar una película
+DELETE http://localhost:3000/movies/2
+
+### Actualizar una película
+PUT http://localhost:3000/movies/5
+Content-Type: application/json
+
+{
+  "name": "The Flash Modificado",
+  "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+  "release": "2023-06-15",
+  "genreId": 2,
+  "summary": "Resumen de prueba"
+}

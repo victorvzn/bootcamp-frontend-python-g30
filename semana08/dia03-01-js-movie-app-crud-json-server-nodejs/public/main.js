@@ -45,6 +45,14 @@ const renderMovies = (movies = []) => {
   movieList.innerHTML = html
 }
 
+const moviesForm = document.querySelector('#moviesForm')
+
+moviesForm.addEventListener('submit', async (event) => {
+  event.preventDefault() // Evita que el formulario actualice la página
+
+  console.log('Guardando la película...')
+})
+
 fetchMovies()
   .then(data => {
     renderMovies(data)

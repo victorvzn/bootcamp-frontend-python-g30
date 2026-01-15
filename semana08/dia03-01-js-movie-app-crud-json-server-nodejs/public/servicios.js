@@ -5,3 +5,17 @@ export const fetchMovies = async () => {
 
   return await response.json() // Esperar a la conversión de JSON a Objeto JS (asincrona)
 }
+
+export const createMovie = async (form) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json' // mimetypes. Ej, json, xls, jpg, etc
+    },
+    body: JSON.stringify(form) // EL body siempre tiene que ser una cadena de texto
+  }
+
+  const response = await fetch(url, options) // Por defecto usa el método GET
+
+  return await response.json()
+}

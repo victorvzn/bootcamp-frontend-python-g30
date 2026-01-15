@@ -19,3 +19,14 @@ export const createMovie = async (form) => {
 
   return await response.json()
 }
+
+export const deleteMovie = async (id) => {
+  const options = {
+    method: 'DELETE'
+  }
+
+  // http://localhost:3000/movies/3
+  const response = await fetch(`${url}/${id}`, options)
+
+  return await response.json()
+}

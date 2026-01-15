@@ -33,14 +33,6 @@
       "id": 5
     },
     {
-      "id": 6,
-      "name": "Spider-Man: Across the Spider-Verse ",
-      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
-      "release": "2023-06-02",
-      "genreId": 3,
-      "summary": "Resumen de prueba"
-    },
-    {
       "id": 7,
       "name": "Indiana Jones and the Dial of Destiny",
       "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/Af4bXE63pVsb2FtbW8uYIyPBadD.jpg",
@@ -73,28 +65,12 @@
       "id": 10
     },
     {
-      "name": "abc",
-      "image": "abc",
-      "release": "2026-01-16",
-      "genreId": "3",
-      "summary": "abcxyz",
-      "id": 11
-    },
-    {
       "name": "mi peli",
       "image": "mi imagen",
       "release": "2026-01-22",
       "genreId": "1",
       "summary": "sadasdasd",
       "id": 12
-    },
-    {
-      "name": "otra peli",
-      "image": "lakalsmkd",
-      "release": "2026-01-22",
-      "genreId": "4",
-      "summary": "asdasdasdda",
-      "id": 13
     }
   ]
 }

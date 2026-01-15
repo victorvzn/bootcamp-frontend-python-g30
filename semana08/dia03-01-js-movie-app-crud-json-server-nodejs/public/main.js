@@ -1,4 +1,4 @@
-import { createMovie, fetchMovies } from './servicios.js'
+import { createMovie, deleteMovie, fetchMovies } from './servicios.js'
 
 const renderMovies = (movies = []) => {
   // TODO: Renderizar las peliculas usando la plantilla del tbody
@@ -33,7 +33,7 @@ const renderMovies = (movies = []) => {
             <button>
               ✏
             </button>
-            <button>
+            <button class="movies__remove" data-id="${movie.id}">
               ❌
             </button>
           </div>
@@ -46,8 +46,33 @@ const renderMovies = (movies = []) => {
 
   // TODO: remover una película cuando presionamos el boton ❌
 
-  // TODO: Llenar el formulario de pelicula con la data de la pelicula seleccionado cuando presionamos en el botón ✏ y guardar la edición.
+  const removeButtons = document.querySelectorAll('.movies__remove')
 
+  removeButtons.forEach(button => {
+    button.addEventListener('click', async () => {
+      // 1. Extraer el id de la película a eliminar
+      const { id } = event.target.dataset // dataset -> { id: ??? }
+
+      console.log(id)
+
+      // 2. Eliminar la película en el servidor
+
+      const confirmDelete = confirm('¿Estás seguro de eliminar esta película?') // Devuelve un boolean
+
+      if (confirmDelete) {
+        await deleteMovie(id)
+
+        // 3. Actualizar la lista de películas
+
+        const movies = await fetchMovies()
+
+        renderMovies(movies)
+      }
+
+    })
+  })
+
+  // TODO: Llenar el formulario de pelicula con la data de la pelicula seleccionado cuando presionamos en el botón ✏ y guardar la edición.
 }
 
 const moviesForm = document.querySelector('#moviesForm')

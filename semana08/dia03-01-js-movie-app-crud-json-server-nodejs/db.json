@@ -71,6 +71,30 @@
       "genreId": 3,
       "summary": "G30 la películas más esperado del año",
       "id": 10
+    },
+    {
+      "name": "abc",
+      "image": "abc",
+      "release": "2026-01-16",
+      "genreId": "3",
+      "summary": "abcxyz",
+      "id": 11
+    },
+    {
+      "name": "mi peli",
+      "image": "mi imagen",
+      "release": "2026-01-22",
+      "genreId": "1",
+      "summary": "sadasdasd",
+      "id": 12
+    },
+    {
+      "name": "otra peli",
+      "image": "lakalsmkd",
+      "release": "2026-01-22",
+      "genreId": "4",
+      "summary": "asdasdasdda",
+      "id": 13
     }
   ]
 }

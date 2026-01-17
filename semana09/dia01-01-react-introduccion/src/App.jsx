@@ -1,35 +1,55 @@
-// 07 - Usando expresiones con jsx "{}"
+// 08 - Propiedades de un componentes
 
-import { LISTA_DE_FRUTAS, EDAD, curso } from './components/frutas.js'
+const BienvenidaPersonalizada = (props) => {
+  return <h3>Hola {props.nombre} y tu edad es {props.edad}!</h3>
+}
 
 const App = () => {
-  const suma = 8 + 9
-  const nombre = 'Victor'
-
-  // Comentarios en React/JS dentro del cuerpo de la función
-  /* Otro comentario multilínea */
-
   return (
-    <section>
-      <h1>Hola React!</h1>
-      <p>{suma}</p>
-      <p>{nombre}</p>
-      <p>{1 + 2 * 9 ** 2}</p>
-      <p>{`Hola ${nombre}`}</p>
-      <p>Hola {nombre} ✅</p>
+    <div>
+      <h4>Propiedades de un componente|</h4>
 
-      {/* Comentario en React dentro el JSX */}
-
-      <p>{LISTA_DE_FRUTAS}</p>
-      <p>{EDAD}</p>
-      <p>{JSON.stringify(curso)}</p>
-      <p>{curso.nombre}</p>
-      <p>{curso.nota}</p>
-    </section>
+      <BienvenidaPersonalizada nombre="Eduardo" edad={23} />
+      <BienvenidaPersonalizada nombre="Victor" edad={39} />
+      <BienvenidaPersonalizada nombre="Alex" />
+    </div>
   )
 }
 
 export default App
+
+// 07 - Usando expresiones con jsx "{}"
+
+// import { LISTA_DE_FRUTAS, EDAD, curso } from './components/frutas.js'
+
+// const App = () => {
+//   const suma = 8 + 9
+//   const nombre = 'Victor'
+
+//   // Comentarios en React/JS dentro del cuerpo de la función
+//   /* Otro comentario multilínea */
+
+//   return (
+//     <section>
+//       <h1>Hola React!</h1>
+//       <p>{suma}</p>
+//       <p>{nombre}</p>
+//       <p>{1 + 2 * 9 ** 2}</p>
+//       <p>{`Hola ${nombre}`}</p>
+//       <p>Hola {nombre} ✅</p>
+
+//       {/* Comentario en React dentro el JSX */}
+
+//       <p>{LISTA_DE_FRUTAS}</p>
+//       <p>{EDAD}</p>
+//       <p>{JSON.stringify(curso)}</p>
+//       <p>{curso.nombre}</p>
+//       <p>{curso.nota}</p>
+//     </section>
+//   )
+// }
+
+// export default App
 
 // 06 - Importando componentes externos
 

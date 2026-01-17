@@ -1,22 +1,42 @@
-// 08 - Propiedades de un componentes
+// 09 - Propiedades de un componente (Con destructuring)
 
-const BienvenidaPersonalizada = (props) => {
-  return <h3>Hola {props.nombre} y tu edad es {props.edad}!</h3>
+const BienvenidaPersonalizada = ({ nombre, edad = 18 }) => {
+  return <h3>Hola {nombre} y tu edad es {edad}!</h3>
 }
 
 const App = () => {
   return (
     <div>
-      <h4>Propiedades de un componente|</h4>
+      <h4>Propiedades de un componente</h4>
 
-      <BienvenidaPersonalizada nombre="Eduardo" edad={23} />
-      <BienvenidaPersonalizada nombre="Victor" edad={39} />
+      <BienvenidaPersonalizada nombre="Eduardo" edad={24} />
+      <BienvenidaPersonalizada nombre="Victor" edad={40} />
       <BienvenidaPersonalizada nombre="Alex" />
     </div>
   )
 }
 
 export default App
+
+// 08 - Propiedades de un componente (Ahora el componente es reutilizable)
+
+// const BienvenidaPersonalizada = (props) => {
+//   return <h3>Hola {props.nombre} y tu edad es {props.edad}!</h3>
+// }
+
+// const App = () => {
+//   return (
+//     <div>
+//       <h4>Propiedades de un componente</h4>
+
+//       <BienvenidaPersonalizada nombre="Eduardo" edad={23} />
+//       <BienvenidaPersonalizada nombre="Victor" edad={39} />
+//       <BienvenidaPersonalizada nombre="Alex" />
+//     </div>
+//   )
+// }
+
+// export default App
 
 // 07 - Usando expresiones con jsx "{}"
 

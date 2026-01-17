@@ -1,21 +1,43 @@
-//
+// 07 - Usando expresiones con jsx "{}"
 
-// 06 - Importando componentes externos
+const App = () => {
+  const suma = 8 + 9
+  const nombre = 'Victor'
 
-import { ComponenteDespedida } from './components/ComponenteDespedida.jsx'
-import ComponenteSaludo from './components/ComponenteSaludo.jsx'
-
-export default function App() {
   return (
     <section>
-      <h3>Componentes anidados</h3>      
+      <h1>Hola React!</h1>
+      <p>{suma}</p>
+      <p>{nombre}</p>
+      <p>{1 + 2 * 9 ** 2}</p>
+      <p>{`Hola ${nombre}`}</p>
+      <p>Hola {nombre} ✅</p>
 
-      <ComponenteSaludo />
+      {/* Comentario en React dentro el JSX */}
 
-      <ComponenteDespedida />
+      
     </section>
   )
 }
+
+export default App
+
+// 06 - Importando componentes externos
+
+// import { ComponenteDespedida } from './components/ComponenteDespedida.jsx'
+// import ComponenteSaludo from './components/ComponenteSaludo.jsx'
+
+// export default function App() {
+//   return (
+//     <section>
+//       <h3>Componentes anidados</h3>      
+
+//       <ComponenteSaludo />
+
+//       <ComponenteDespedida />
+//     </section>
+//   )
+// }
 
 // 05 - Anidando componentes dentro de otros
 

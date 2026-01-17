@@ -1,5 +1,8 @@
+//
+
 // 06 - Importando componentes externos
 
+import { ComponenteDespedida } from './components/ComponenteDespedida.jsx'
 import ComponenteSaludo from './components/ComponenteSaludo.jsx'
 
 export default function App() {

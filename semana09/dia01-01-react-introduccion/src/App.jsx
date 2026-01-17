@@ -1,8 +1,13 @@
 // 07 - Usando expresiones con jsx "{}"
 
+import { LISTA_DE_FRUTAS, EDAD, curso } from './components/frutas.js'
+
 const App = () => {
   const suma = 8 + 9
   const nombre = 'Victor'
+
+  // Comentarios en React/JS dentro del cuerpo de la función
+  /* Otro comentario multilínea */
 
   return (
     <section>
@@ -15,7 +20,11 @@ const App = () => {
 
       {/* Comentario en React dentro el JSX */}
 
-      
+      <p>{LISTA_DE_FRUTAS}</p>
+      <p>{EDAD}</p>
+      <p>{JSON.stringify(curso)}</p>
+      <p>{curso.nombre}</p>
+      <p>{curso.nota}</p>
     </section>
   )
 }

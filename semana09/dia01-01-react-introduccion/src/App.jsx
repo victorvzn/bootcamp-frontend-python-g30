@@ -1,3 +1,24 @@
+// 05 - Anidando componentes dentro de otros
+
+function ComponenteSaludo() {
+  return <h4>Hola alumnos!</h4>
+}
+
+function ComponenteDespedida() {
+  return <h4>Vamos al receso!</h4>
+}
+
+export default function App() {
+  return (
+    <section>
+      <h3>Componentes anidados</h3>      
+
+      <ComponenteSaludo />
+
+      <ComponenteDespedida />
+    </section>
+  )
+}
 
 
 // 04 - Extensiones de VSCODE necesarias para usar React

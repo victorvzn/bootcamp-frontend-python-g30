@@ -13,6 +13,7 @@ const App = () => {
       <div className='text-3xl text-center p-8 bg-orange-500 text-white'>Tailwind CSS</div>
 
       <Contador />
+      <Contador />
     </div>
   )
 }

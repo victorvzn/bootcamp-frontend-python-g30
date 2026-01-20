@@ -1,5 +1,7 @@
 import './estilos.css'
 
+import Contador from './components/Contador'
+
 // NOTE: Para añadir estilos a un componente podemos usar el atributo className
 
 const App = () => {
@@ -9,6 +11,8 @@ const App = () => {
       <p style={{ backgroundColor: 'yellow', padding: '1rem' }}>Hola mundo</p>
 
       <div className='text-3xl text-center p-8 bg-orange-500 text-white'>Tailwind CSS</div>
+
+      <Contador />
     </div>
   )
 }

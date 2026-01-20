@@ -7,6 +7,8 @@ const App = () => {
     <div>
       <h1 className="textoBlanco">app</h1>
       <p style={{ backgroundColor: 'yellow', padding: '1rem' }}>Hola mundo</p>
+
+      <div className='text-3xl text-center p-8 bg-orange-500 text-white'>Tailwind CSS</div>
     </div>
   )
 }

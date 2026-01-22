@@ -64,9 +64,10 @@ const App = () => {
         />
 
         <div className="grid grid-cols-3 gap-4">
-          {operaciones.map(operacion => {
+          {operaciones.map((operacion, index) => {
             return (
               <button
+                key={operacion}
                 className="button bg-red-400 p-2 rounded-md hover:bg-red-500 duration-300 text-black text-xl font-bold"
                 onClick={handleButton}
               >
@@ -80,6 +81,7 @@ const App = () => {
           {numeros.map(numero => {
             return (
               <button
+                key={numero}
                 className="button bg-yellow-400 p-2 rounded-md hover:bg-yellow-500 duration-300 text-black text-xl font-bold"
                 onClick={handleButton}
               >
@@ -91,6 +93,7 @@ const App = () => {
           {acciones.map(accion => {
             return (
               <button
+                key={accion}
                 className="button bg-green-400 p-2 rounded-md hover:bg-green-500 duration-300 text-black text-xl font-bold"
                 onClick={handleButton}
               >

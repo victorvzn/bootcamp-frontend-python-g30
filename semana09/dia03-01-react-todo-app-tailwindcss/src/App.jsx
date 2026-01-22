@@ -22,11 +22,51 @@ const App = () => {
   const [tareas, setTareas] = useState(DEFAULT_TAREAS)
    
   return (
-    <div>
-      
+    <main className="flex flex-col gap-4">
+      <h1>Todo App + React + Tailwind</h1>
+
+      <form className="flex gap-2">
+        <input
+          type="text"
+          className="border p-1"
+        />
+        <input
+          type="submit"
+          value="Añadir"
+          className="bg-blue-400 p-2"
+        />
+      </form>
+
+      <section className="bg-blue-200 flex justify-between p-4">
+        <span>0 de 0 completadas</span>
+
+        <button
+          className="bg-green-400 p-2"
+        >
+          Limpiar completadas
+        </button>
+      </section>
+
+      <ul className="flex flex-col gap-2 p-4">
+        <li className="flex justify-between">
+          <div className="flex gap-2">
+            <input type="checkbox" />
+
+            <span>
+              tarea 1
+            </span>
+          </div>
+
+          <button
+            className="cursor-pointer"
+          >
+            ❌
+          </button>
+        </li>
+      </ul>
 
       <pre>{JSON.stringify(tareas, null, 2)}</pre>
-    </div>
+    </main>
   )
 }
 

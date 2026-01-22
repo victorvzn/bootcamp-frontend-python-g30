@@ -20,23 +20,54 @@ const App = () => {
   ]
 
   const [tareas, setTareas] = useState(DEFAULT_TAREAS)
+  const [input, setInput] = useState('')
 
   // TODO: renderizar la lista de tareas del estado tareas (tip: usar el map sobre el arreglo en el ul)
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    // TODO: 01 - Crear una nueva tarea en el estado tareas
+    
+    const nuevaTarea = {
+      id: crypto.randomUUID(),
+      titulo: input,
+      completado: false
+    }
+    console.log(nuevaTarea)
+
+    setTareas([...tareas, nuevaTarea])
+
+    setInput('')
+  }
+
+  const handleRemover = (event) => {
+    // TODO: Remover la tarea seleccionada al presionar el botón de la ❌
+  }
+
+  // TODO: Actualizar el estado de la tarea a completado
    
   return (
     <main className="flex flex-col gap-4">
       <h1>Todo App + React + Tailwind</h1>
 
-      <form className="flex gap-2">
+      <form
+        className="flex gap-2"
+        onSubmit={handleSubmit}
+      >
         <input
           type="text"
           className="border p-1"
+          onChange={(event) => setInput(event.target.value)}
+          value={input}
         />
         <input
           type="submit"
           value="Añadir"
           className="bg-blue-400 p-2"
         />
+
+        {input}
       </form>
 
       <section className="bg-blue-200 flex justify-between p-4">
@@ -63,6 +94,7 @@ const App = () => {
 
               <button
                 className="cursor-pointer"
+                onClick={handleRemover}
               >
                 ❌
               </button>

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const App = () => {
   const operaciones = ['+', '-', '*']
   const numeros = [
@@ -8,8 +10,42 @@ const App = () => {
   ]
   const acciones = ['CE', '=']
 
-  const handleButton = () => {
-    console.log('Hice click!')
+  // numeroActual
+  // operador
+  // operando
+
+  const [numeroActual, setNumeroActual] = useState('0')
+  const [operador, setOperador] = useState('')
+  const [operando, setOperando] = useState('')
+
+  const handleButton = (event) => {
+    // console.log('Hice click!', event.target)
+
+    const buttonText = event.target.textContent
+
+    console.log(buttonText)
+
+    if (operaciones.includes(buttonText)) {
+      setOperador(buttonText)
+      setOperando(Number(numeroActual))
+      setNumeroActual('0')
+    } else if (buttonText === '=') {
+      if (operador === '+') {
+        setNumeroActual(Number(operando) + Number(numeroActual))
+      }
+      if (operador === '-') {
+        setNumeroActual(Number(operando) - Number(numeroActual))
+      }
+      if (operador === '*') {
+        setNumeroActual(Number(operando) * Number(numeroActual))
+      }
+    } else if (buttonText === 'CE') {
+      setNumeroActual('0')
+      setOperador('')
+      setOperando('')
+    } else {
+      setNumeroActual(Number(numeroActual + buttonText))
+    }
   }
 
   // for, while, do while, forEach, map, filter, reduce
@@ -24,7 +60,7 @@ const App = () => {
           type="text"
           readOnly
           className="border p-2 text-right text-3xl font-bold rounded-md bg-slate-200"
-          value={0}
+          value={numeroActual}
         />
 
         <div className="grid grid-cols-3 gap-4">

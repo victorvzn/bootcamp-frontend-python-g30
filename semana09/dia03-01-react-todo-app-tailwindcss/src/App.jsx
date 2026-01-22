@@ -20,6 +20,8 @@ const App = () => {
   ]
 
   const [tareas, setTareas] = useState(DEFAULT_TAREAS)
+
+  // TODO: renderizar la lista de tareas del estado tareas (tip: usar el map sobre el arreglo en el ul)
    
   return (
     <main className="flex flex-col gap-4">
@@ -48,21 +50,25 @@ const App = () => {
       </section>
 
       <ul className="flex flex-col gap-2 p-4">
-        <li className="flex justify-between">
-          <div className="flex gap-2">
-            <input type="checkbox" />
+        {tareas.map(tarea => {
+          return (
+            <li className="flex justify-between" key={tarea.id}>
+              <div className="flex gap-2">
+                <input type="checkbox" />
 
-            <span>
-              tarea 1
-            </span>
-          </div>
+                <span>
+                  {tarea.titulo}
+                </span>
+              </div>
 
-          <button
-            className="cursor-pointer"
-          >
-            ❌
-          </button>
-        </li>
+              <button
+                className="cursor-pointer"
+              >
+                ❌
+              </button>
+            </li>
+          )
+        })}
       </ul>
 
       <pre>{JSON.stringify(tareas, null, 2)}</pre>

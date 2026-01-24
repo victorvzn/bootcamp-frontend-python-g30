@@ -41,8 +41,13 @@ const App = () => {
     setInput('')
   }
 
-  const handleRemover = (event) => {
+  const handleRemover = (id) => {
     // TODO: Remover la tarea seleccionada al presionar el botón de la ❌
+    console.log('Remover tarea con id:', id)
+
+    const tareasActualizadas = tareas.filter(tarea => tarea.id !== id)
+
+    setTareas(tareasActualizadas)
   }
 
   // TODO: Actualizar el estado de la tarea a completado
@@ -94,7 +99,7 @@ const App = () => {
 
               <button
                 className="cursor-pointer"
-                onClick={handleRemover}
+                onClick={() => handleRemover(tarea.id)}
               >
                 ❌
               </button>

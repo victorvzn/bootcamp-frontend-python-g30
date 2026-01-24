@@ -1,3 +1,7 @@
+import { useState } from "react"
+
+import Avatar from "boring-avatars";
+
 const App = () => {
   const DEFAULT_STUDENTS = [
     {
@@ -18,6 +22,9 @@ const App = () => {
   ]
 
   // TODO: Crear un estado y listar los estudiantes del arreglo DEFAULT_STUDENTS
+  const [students, setStudents] = useState(DEFAULT_STUDENTS)
+
+  // TODO: Implementar el boton eliminar de cada estudiante.
 
   return (
     <main className="w-96 mx-auto border border-slate-400 rounded-lg mt-6 p-3">
@@ -64,17 +71,26 @@ const App = () => {
 
       <section className="mt-4 flex flex-col gap-2">
         
-        <div className="flex justify-between items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border">
-          <div>iMAGEN</div>
-          <div className="text-left">NAME</div>
-          <div className="text-left">CITY</div>
-          <div className="flex gap-2">
-            <button>✏</button>
-            <button>❌</button>
-          </div>
-        </div>
+        {students.map(student => {
+          return (
+            <div
+              key={student.id}
+              className="flex justify-between items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg border"
+            >
+              <Avatar name={student.name} variant="beam" size={48} />
+              <div className="text-left">{student.name}</div>
+              <div className="text-left">{student.city}</div>
+              <div className="flex gap-2">
+                <button>✏</button>
+                <button>❌</button>
+              </div>
+            </div>
+          )
+        })}
 
       </section>
+
+      <pre className="mt-6 bg-slate-200 p-4">{JSON.stringify(students, null, 2)}</pre>
     </main>
   )
 }

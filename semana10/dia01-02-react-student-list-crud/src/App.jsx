@@ -25,6 +25,11 @@ const App = () => {
   const [students, setStudents] = useState(DEFAULT_STUDENTS)
 
   // TODO: Implementar el boton eliminar de cada estudiante.
+  const handleRemove = (id) => {
+    const updateStudents = students.filter(student => student.id !== id)
+
+    setStudents(updateStudents)
+  }
 
   return (
     <main className="w-96 mx-auto border border-slate-400 rounded-lg mt-6 p-3">
@@ -82,7 +87,7 @@ const App = () => {
               <div className="text-left">{student.city}</div>
               <div className="flex gap-2">
                 <button>✏</button>
-                <button>❌</button>
+                <button onClick={() => handleRemove(student.id)}>❌</button>
               </div>
             </div>
           )

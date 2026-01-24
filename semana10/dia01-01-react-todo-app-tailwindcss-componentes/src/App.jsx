@@ -1,5 +1,8 @@
 import { useState } from "react"
 
+import TareaTitulo from "./components/TareaTitulo"
+import TareaFormulario from "./components/TareaFormulario"
+
 const App = () => {
   const DEFAULT_TAREAS = [
     {
@@ -20,26 +23,8 @@ const App = () => {
   ]
 
   const [tareas, setTareas] = useState(DEFAULT_TAREAS)
-  const [input, setInput] = useState('')
 
   // TODO: renderizar la lista de tareas del estado tareas (tip: usar el map sobre el arreglo en el ul)
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-
-    // TODO: 01 - Crear una nueva tarea en el estado tareas
-    
-    const nuevaTarea = {
-      id: crypto.randomUUID(),
-      titulo: input,
-      completado: false
-    }
-    console.log(nuevaTarea)
-
-    setTareas([...tareas, nuevaTarea])
-
-    setInput('')
-  }
 
   const handleRemover = (id) => {
     // TODO: Remover la tarea seleccionada al presionar el botón de la ❌
@@ -75,27 +60,16 @@ const App = () => {
     // TODO: Limpiar las tareas completadas del estado tareas
     console.log('COmpletando tareas')
   }
+
+  const handleSave = (nuevaTarea) => {
+    setTareas([...tareas, nuevaTarea])
+  }
    
   return (
     <main className="flex flex-col gap-4">
-      <h1>Todo App + React + Tailwind</h1>
+      <TareaTitulo titulo='Todo App + React + Tailwind (Componentes)' />
 
-      <form
-        className="flex gap-2"
-        onSubmit={handleSubmit}
-      >
-        <input
-          type="text"
-          className="border p-1"
-          onChange={(event) => setInput(event.target.value)}
-          value={input}
-        />
-        <input
-          type="submit"
-          value="Añadir"
-          className="bg-blue-400 p-2"
-        />
-      </form>
+      <TareaFormulario onSubmit={handleSave} />
 
       <section className="bg-blue-200 flex justify-between p-4">
         <span>

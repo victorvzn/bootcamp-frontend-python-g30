@@ -51,6 +51,23 @@ const App = () => {
   }
 
   // TODO: Actualizar el estado de la tarea a completado
+  const handleCompletado = (id) => {
+    console.log('Actualizando tarea', id)
+
+    const tareasActualizadas = tareas.map(tarea => {
+      if (tarea.id === id) {
+        // Aquí vamos a modificar la propiedad completado a true o a false
+        return {
+          ...tarea,
+          completado: !tarea.completado
+        }
+      }
+
+      return tarea
+    })
+
+    setTareas(tareasActualizadas)
+  }
    
   return (
     <main className="flex flex-col gap-4">
@@ -90,9 +107,15 @@ const App = () => {
           return (
             <li className="flex justify-between" key={tarea.id}>
               <div className="flex gap-2">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => handleCompletado(tarea.id)}
+                  checked={tarea.completado}
+                />
 
-                <span>
+                {/* TODO: la clase line-through solo debe añadirse al className si tarea.completado es true */}
+
+                <span className="line-through">
                   {tarea.titulo}
                 </span>
               </div>

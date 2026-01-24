@@ -68,6 +68,13 @@ const App = () => {
 
     setTareas(tareasActualizadas)
   }
+
+  const tareasCompletadas = tareas.filter(tarea => tarea.completado)
+
+  const handleLimpiarTareasCompletadas = () => {
+    // TODO: Limpiar las tareas completadas del estado tareas
+    console.log('COmpletando tareas')
+  }
    
   return (
     <main className="flex flex-col gap-4">
@@ -93,10 +100,13 @@ const App = () => {
       </form>
 
       <section className="bg-blue-200 flex justify-between p-4">
-        <span>0 de 0 completadas</span>
+        <span>
+          {tareasCompletadas.length} de {tareas.length} completadas
+        </span>
 
         <button
           className="bg-green-400 p-2"
+          onClick={handleLimpiarTareasCompletadas}
         >
           Limpiar completadas
         </button>

@@ -115,7 +115,7 @@ const App = () => {
 
                 {/* TODO: la clase line-through solo debe añadirse al className si tarea.completado es true */}
 
-                <span className="line-through">
+                <span className={ tarea.completado ? "line-through text-red-500" : '' }>
                   {tarea.titulo}
                 </span>
               </div>

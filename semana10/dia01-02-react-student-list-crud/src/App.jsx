@@ -24,6 +24,7 @@ const App = () => {
   // TODO: Crear un estado y listar los estudiantes del arreglo DEFAULT_STUDENTS
   const [students, setStudents] = useState(DEFAULT_STUDENTS)
   const [form, setForm] = useState({
+    id: '',
     name: '',
     city: '',
   })
@@ -37,16 +38,31 @@ const App = () => {
 
   // TODO: Implementar el boton editar (recupera la data del estado form en el formulario)
 
+  const handleUpdate = (id) => {
+    const studentFound = students.find(student => {
+      return student.id === id
+    })
+
+    setForm(studentFound)
+  }
+
   const handleSave = (event) => {
     event.preventDefault() // Evitamos que la página se actualice
 
-    const newStudent = {
-      name: form.name,
-      city: form.city,
-      id: crypto.randomUUID()
-    }
+    const isNew = form.id === ''
 
-    setStudents([...students, newStudent])
+    if (isNew) {
+      const newStudent = {
+        name: form.name,
+        city: form.city,
+        id: crypto.randomUUID()
+      }
+
+      setStudents([...students, newStudent])
+    } else {
+      // Aquí editamos un estudiante existente
+      // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe
+    }
 
     setForm({
       name: '',
@@ -125,7 +141,7 @@ const App = () => {
               <div className="text-left">{student.name}</div>
               <div className="text-left">{student.city}</div>
               <div className="flex gap-2">
-                <button>✏</button>
+                <button onClick={() => handleUpdate(student.id)}>✏</button>
                 <button onClick={() => handleRemove(student.id)}>❌</button>
               </div>
             </div>

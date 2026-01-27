@@ -38,6 +38,19 @@ const App = () => {
   const handleSave = (event) => {
     event.preventDefault() // Evitamos que la página se actualice
 
+    const newStudent = {
+      name: form.name,
+      city: form.city,
+      id: crypto.randomUUID()
+    }
+
+    setStudents([...students, newStudent])
+
+    setForm({
+      name: '',
+      city: ''
+    })
+
     console.log('Creando un nuevo estudiante!', form)
   }
 
@@ -64,6 +77,7 @@ const App = () => {
             placeholder="Ex. Victor Villazón"
             required
             onChange={handleChange}
+            value={form.name}
           />
         </label>
 
@@ -75,6 +89,7 @@ const App = () => {
             name="city"
             placeholder="Ex. Chiclayo"
             onChange={handleChange}
+            value={form.city}
           />
         </label>
 

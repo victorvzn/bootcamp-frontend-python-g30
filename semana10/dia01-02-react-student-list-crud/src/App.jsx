@@ -4,25 +4,28 @@ import Avatar from "boring-avatars";
 
 const App = () => {
   const DEFAULT_STUDENTS = [
-    {
-      id: "1",
-      name: "Bulma",
-      city: 'Chiclayo'
-    },
-    {
-      id: "2",
-      name: "Goku",
-      city: 'Trujillo'
-    },
-    {
-      id: "3",
-      name: "Vegeta",
-      city: 'Lima'
-    }
+    // {
+    //   id: "1",
+    //   name: "Bulma",
+    //   city: 'Chiclayo'
+    // },
+    // {
+    //   id: "2",
+    //   name: "Goku",
+    //   city: 'Trujillo'
+    // },
+    // {
+    //   id: "3",
+    //   name: "Vegeta",
+    //   city: 'Lima'
+    // }
   ]
 
   // TODO: Crear un estado y listar los estudiantes del arreglo DEFAULT_STUDENTS
-  const [students, setStudents] = useState(DEFAULT_STUDENTS)
+  const [students, setStudents] = useState(() => {
+    return JSON.parse(localStorage.getItem('STUDENTS') ?? '[]')
+  })
+
   const [form, setForm] = useState({
     id: '',
     name: '',
@@ -31,9 +34,11 @@ const App = () => {
 
   // TODO: Implementar el boton eliminar de cada estudiante.
   const handleRemove = (id) => {
-    const updateStudents = students.filter(student => student.id !== id)
+    const updatedStudents = students.filter(student => student.id !== id)
 
-    setStudents(updateStudents)
+    setStudents(updatedStudents)
+
+    localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
   }
 
   // TODO: Implementar el boton editar (recupera la data del estado form en el formulario)
@@ -58,7 +63,11 @@ const App = () => {
         id: crypto.randomUUID()
       }
 
-      setStudents([...students, newStudent])
+      const updatedStudents = [...students, newStudent]
+
+      setStudents(updatedStudents)
+
+      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     } else {
       // Aquí editamos un estudiante existente
       // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe
@@ -75,6 +84,8 @@ const App = () => {
       })
 
       setStudents(updatedStudents)
+
+      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     }
 
     setForm({
@@ -144,7 +155,13 @@ const App = () => {
       <h2 className="text-center text-slate-700 font-bold my-4">Student List</h2>
 
       <section className="mt-4 flex flex-col gap-2">
-        
+
+        { students.length === 0 && (
+          <p className="font-light text-center bg-slate-200 p-8">
+            No hay estudiantes
+          </p>
+        )}
+
         {students.map(student => {
           return (
             <div

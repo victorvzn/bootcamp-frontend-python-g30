@@ -23,6 +23,10 @@ const App = () => {
 
   // TODO: Crear un estado y listar los estudiantes del arreglo DEFAULT_STUDENTS
   const [students, setStudents] = useState(DEFAULT_STUDENTS)
+  const [form, setForm] = useState({
+    name: '',
+    city: '',
+  })
 
   // TODO: Implementar el boton eliminar de cada estudiante.
   const handleRemove = (id) => {
@@ -31,12 +35,19 @@ const App = () => {
     setStudents(updateStudents)
   }
 
+  const handleSave = (event) => {
+    event.preventDefault() // Evitamos que la página se actualice
+
+    console.log('Creando un nuevo estudiante!')
+  }
+
   return (
     <main className="w-96 mx-auto border border-slate-400 rounded-lg mt-6 p-3">
       <h1 className="text-2xl text-center text-slate-700 font-bold mb-4">Student CRUD</h1>
 
       <form
         className="flex flex-col gap-4 bg-slate-100 p-3 rounded-lg border"
+        onSubmit={handleSave}
       >
         <label className="flex flex-col gap-2">
           <span className="text-sm font-medium text-slate-900">Name</span>
@@ -45,6 +56,8 @@ const App = () => {
             type="text"
             name="name"
             placeholder="Ex. Victor Villazón"
+            required
+            onChange={(event) => setForm({ ...form, name: event.target.value })}
           />
         </label>
 
@@ -55,6 +68,7 @@ const App = () => {
             type="text"
             name="city"
             placeholder="Ex. Chiclayo"
+            onChange={(event) => setForm({ ...form, city: event.target.value })}
           />
         </label>
 
@@ -71,6 +85,8 @@ const App = () => {
           />
         </div>
       </form>
+
+      <pre>{JSON.stringify(form)}</pre>
 
       <h2 className="text-center text-slate-700 font-bold my-4">Student List</h2>
 

@@ -62,9 +62,23 @@ const App = () => {
     } else {
       // Aquí editamos un estudiante existente
       // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe
+      const updatedStudents = students.map(student => {
+        // Buscar el estudiante con el id
+        if (student.id === form.id) {
+          return {
+            ...student,
+            name: form.name,
+            city: form.city
+          }
+        }
+        return student
+      })
+
+      setStudents(updatedStudents)
     }
 
     setForm({
+      id: '',
       name: '',
       city: ''
     })

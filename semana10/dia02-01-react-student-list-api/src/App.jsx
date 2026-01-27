@@ -32,8 +32,6 @@ const App = () => {
       const updatedStudents = students.filter(student => student.id !== id)
   
       setStudents(updatedStudents)
-  
-      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     }
   
     // TODO: Implementar el boton editar (recupera la data del estado form en el formulario)
@@ -61,8 +59,6 @@ const App = () => {
         const updatedStudents = [...students, newStudent]
   
         setStudents(updatedStudents)
-  
-        localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
       } else {
         // Aquí editamos un estudiante existente
         // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe
@@ -79,8 +75,6 @@ const App = () => {
         })
   
         setStudents(updatedStudents)
-  
-        localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
       }
   
       setForm({

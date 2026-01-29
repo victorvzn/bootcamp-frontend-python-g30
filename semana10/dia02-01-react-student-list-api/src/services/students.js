@@ -39,3 +39,20 @@ export const getStudentById = async (id) => {
 
   return await response.json()
 }
+
+export const updateStudent = async (data) => {
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: data.name,
+      city: data.city
+    })
+  }
+
+  const response = await fetch(`${API_URL}/students/${data.id}`, options)
+
+  return await response.json()
+}

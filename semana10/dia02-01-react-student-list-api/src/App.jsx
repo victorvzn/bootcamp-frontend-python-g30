@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 
 import Avatar from "boring-avatars";
-import { createStudent, fetchStudents, getStudentById, removeStudent } from "./services/students";
+import { createStudent, fetchStudents, getStudentById, removeStudent, updateStudent } from "./services/students";
 import Swal from 'sweetalert2'
 
 const App = () => {
@@ -92,19 +92,25 @@ const App = () => {
       } else {
         // Aquí editamos un estudiante existente
         // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe
-        const updatedStudents = students.map(student => {
-          // Buscar el estudiante con el id
-          if (student.id === form.id) {
-            return {
-              ...student,
-              name: form.name,
-              city: form.city
-            }
-          }
-          return student
-        })
+        const response = await updateStudent(form)
+
+        const dataStudents = await fetchStudents()
+
+        setStudents(dataStudents)
+
+        // const updatedStudents = students.map(student => {
+        //   // Buscar el estudiante con el id
+        //   if (student.id === form.id) {
+        //     return {
+        //       ...student,
+        //       name: form.name,
+        //       city: form.city
+        //     }
+        //   }
+        //   return student
+        // })
   
-        setStudents(updatedStudents)
+        // setStudents(updatedStudents)
       }
   
       setForm({

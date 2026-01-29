@@ -53,14 +53,15 @@ const App = () => {
       // setStudents(updatedStudents)
     }
   
-    // TODO: Implementar el boton editar (recupera la data del estado form en el formulario)
-  
+    
     const handleUpdate = (id) => {
-      const studentFound = students.find(student => {
-        return student.id === id
-      })
+      // TODO: Implementar el boton editar (recupera la data del estado form en el formulario) desde el recurso student de mockapi
+
+      // const studentFound = students.find(student => {
+      //   return student.id === id
+      // })
   
-      setForm(studentFound)
+      // setForm(studentFound)
     }
   
     const handleSave = async (event) => {

@@ -22,3 +22,5 @@ export const createStudent = async (payload) => {
 
   return await response.json()
 }
+
+// TODO: Remover un estudiante usando el método DELETE del recurso students

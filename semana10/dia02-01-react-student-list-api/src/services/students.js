@@ -24,3 +24,12 @@ export const createStudent = async (payload) => {
 }
 
 // TODO: Remover un estudiante usando el método DELETE del recurso students
+export const removeStudent = async (id) => {
+  const options = {
+    method: 'DELETE'
+  }
+
+  const response = await fetch(`${API_URL}/students/${id}`, options)
+
+  return await response.json()
+}

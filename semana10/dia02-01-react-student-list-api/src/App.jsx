@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 
 import Avatar from "boring-avatars";
-import { createStudent, fetchStudents } from "./services/students";
+import { createStudent, fetchStudents, removeStudent } from "./services/students";
 
 const App = () => {
   const [contador, setContador] = useState(0)
@@ -28,10 +28,16 @@ const App = () => {
     })
   
     // TODO: Implementar el boton eliminar de cada estudiante.
-    const handleRemove = (id) => {
-      const updatedStudents = students.filter(student => student.id !== id)
+    const handleRemove = async (id) => {
+      const response = await removeStudent(id)
+
+      const dataStudents = await fetchStudents()
+
+      setStudents(dataStudents)
+
+      // const updatedStudents = students.filter(student => student.id !== id)
   
-      setStudents(updatedStudents)
+      // setStudents(updatedStudents)
     }
   
     // TODO: Implementar el boton editar (recupera la data del estado form en el formulario)

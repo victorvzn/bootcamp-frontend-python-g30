@@ -33,3 +33,9 @@ export const removeStudent = async (id) => {
 
   return await response.json()
 }
+
+export const getStudentById = async (id) => {
+  const response = await fetch(`${API_URL}/students/${id}`)
+
+  return await response.json()
+}

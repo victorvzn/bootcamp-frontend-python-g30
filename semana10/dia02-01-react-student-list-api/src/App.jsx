@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 
 import Avatar from "boring-avatars";
-import { createStudent, fetchStudents, removeStudent } from "./services/students";
+import { createStudent, fetchStudents, getStudentById, removeStudent } from "./services/students";
 import Swal from 'sweetalert2'
 
 const App = () => {
@@ -54,14 +54,16 @@ const App = () => {
     }
   
     
-    const handleUpdate = (id) => {
+    const handleUpdate = async (id) => {
       // TODO: Implementar el boton editar (recupera la data del estado form en el formulario) desde el recurso student de mockapi
+
+      const dataStudent = await getStudentById(id)
 
       // const studentFound = students.find(student => {
       //   return student.id === id
       // })
   
-      // setForm(studentFound)
+      setForm(dataStudent)
     }
   
     const handleSave = async (event) => {

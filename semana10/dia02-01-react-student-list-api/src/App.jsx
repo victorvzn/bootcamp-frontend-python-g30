@@ -6,6 +6,7 @@ import { useEffect } from "react"
 
 import Avatar from "boring-avatars";
 import { createStudent, fetchStudents, removeStudent } from "./services/students";
+import Swal from 'sweetalert2'
 
 const App = () => {
   const [contador, setContador] = useState(0)
@@ -28,12 +29,24 @@ const App = () => {
     })
   
     // TODO: Implementar el boton eliminar de cada estudiante.
-    const handleRemove = async (id) => {
-      const response = await removeStudent(id)
+    const handleRemove = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          const response = await removeStudent(id)
 
-      const dataStudents = await fetchStudents()
+          const dataStudents = await fetchStudents()
 
-      setStudents(dataStudents)
+          setStudents(dataStudents)
+        }
+      });
 
       // const updatedStudents = students.filter(student => student.id !== id)
   

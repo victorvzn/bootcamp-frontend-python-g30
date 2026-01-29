@@ -1,6 +1,6 @@
 // Aquí añadiremos las funciones necesarias para interactuar con el API
 
-const API_URL = 'https://697828f05b9c0aed1e882a5d.mockapi.io/v1'
+const API_URL = import.meta.env.VITE_API_URL
 
 export const fetchStudents = async () => {
   const response = await fetch(`${API_URL}/students`)

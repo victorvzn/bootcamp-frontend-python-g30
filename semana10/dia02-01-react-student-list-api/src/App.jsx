@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 
 import Avatar from "boring-avatars";
-import { fetchStudents } from "./services/students";
+import { createStudent, fetchStudents } from "./services/students";
 
 const App = () => {
   const [contador, setContador] = useState(0)
@@ -44,7 +44,7 @@ const App = () => {
       setForm(studentFound)
     }
   
-    const handleSave = (event) => {
+    const handleSave = async (event) => {
       event.preventDefault() // Evitamos que la página se actualice
   
       const isNew = form.id === ''
@@ -53,12 +53,20 @@ const App = () => {
         const newStudent = {
           name: form.name,
           city: form.city,
-          id: crypto.randomUUID()
+          // id: crypto.randomUUID()
         }
+
+        const response = await createStudent(newStudent)
+
+        console.log(response)
+
+        const dataStudents = await fetchStudents()
+
+        setStudents(dataStudents)
   
-        const updatedStudents = [...students, newStudent]
+        // const updatedStudents = [...students, newStudent]
   
-        setStudents(updatedStudents)
+        // setStudents(updatedStudents)
       } else {
         // Aquí editamos un estudiante existente
         // TODO: IMplementar el guarddo del estudiante en el estado student cuando existe

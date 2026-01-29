@@ -7,3 +7,18 @@ export const fetchStudents = async () => {
   
   return await response.json()
 }
+
+// Crearemos una petición del tipo POST para el endpoint /students
+export const createStudent = async (payload) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json' // Mimetypes
+    },
+    body: JSON.stringify(payload) // Tiene que ir en formato de texto
+  }
+
+  const response = await fetch(`${API_URL}/students`, options)
+
+  return await response.json()
+}

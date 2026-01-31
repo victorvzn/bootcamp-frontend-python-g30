@@ -35,7 +35,7 @@ const App = () => {
     const response = await supabase.from('movies').insert([
       {
         name: form.name,
-        // user_id: session.user.id
+        // user_id: session.user.id // Opcion no tan segura, mejor es añadir un campo por defecto al campo user_id y además dar permisos de inserción solo a las peliculas asociadas al usuario autenticado
       }
     ])
 
@@ -67,6 +67,12 @@ const App = () => {
     setSession(data.session)
   } 
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+
+    setSession(null)
+  }
+
   return (
     <div>
       <section>
@@ -95,45 +101,50 @@ const App = () => {
             </form>
           </>
         ) : (
-          <h1 className="text-2xl">Bienvenido, {session?.user?.email}</h1>
+          <div className="flex gap-4">
+            <h1 className="text-2xl">Bienvenido, {session?.user?.email}</h1>
+            <button className="bg-red-400" onClick={handleLogout}>Logout</button>
+          </div>
         )}
       </section>
+      
+      {session && (
+        <section>
+          <h1 className="text-2xl">Movies</h1>
 
-      <section>
-        <h1 className="text-2xl">Movies</h1>
+          <form onSubmit={handleSave}>
+            <input
+              type="text"
+              name="name"
+              className="border"
+              placeholder="Nombre de la película"
+              required
+              onChange={
+                (event) => setForm((prev) => ({ ...prev, name: event.target.value }))
+              }
+              value={form.name}
+            />
+            <input
+              type="submit"
+              value="Guardar"
+              className="bg-orange-300"
+            />
+          </form>
 
-        <form onSubmit={handleSave}>
-          <input
-            type="text"
-            name="name"
-            className="border"
-            placeholder="Nombre de la película"
-            required
-            onChange={
-              (event) => setForm((prev) => ({ ...prev, name: event.target.value }))
-            }
-            value={form.name}
-          />
-          <input
-            type="submit"
-            value="Guardar"
-            className="bg-orange-300"
-          />
-        </form>
+          <h1 className="text-2xl">Lista de películas</h1>
 
-        <h1 className="text-2xl">Lista de películas</h1>
-
-        <ul className="list-disc list-inside pl-8">
-          {movies.map(movie => {
-            return (
-              <li key={movie.id} className="">
-                {movie.name}
-                <button>❌</button>
-              </li>
-            )
-          })}
-        </ul>
-      </section>
+          <ul className="list-disc list-inside pl-8">
+            {movies.map(movie => {
+              return (
+                <li key={movie.id} className="">
+                  {movie.name}
+                  <button>❌</button>
+                </li>
+              )
+            })}
+          </ul>
+        </section>
+      )}
     </div>
   )
 }

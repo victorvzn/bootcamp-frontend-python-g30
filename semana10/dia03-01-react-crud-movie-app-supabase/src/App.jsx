@@ -30,6 +30,8 @@ const App = () => {
     })
   }
 
+  // TODO: Eliminar las películas usando supabase agregando una política para eliminar registros.
+
   return (
     <div>
       <section>
@@ -56,10 +58,13 @@ const App = () => {
 
         <h1 className="text-2xl">Lista de películas</h1>
 
-        <ul className="list-disc list-inside pl-4">
+        <ul className="list-disc list-inside pl-8">
           {movies.map(movie => {
             return (
-              <li key={movie.id}>{movie.name}</li>
+              <li key={movie.id} className="">
+                {movie.name}
+                <button>❌</button>
+              </li>
             )
           })}
         </ul>

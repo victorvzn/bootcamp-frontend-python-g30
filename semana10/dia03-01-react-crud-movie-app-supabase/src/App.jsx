@@ -36,7 +36,9 @@ const App = () => {
             className="border"
             placeholder="Nombre de la película"
             required
-            onChange={(event) => setForm(event.target.value)}
+            onChange={
+              (event) => setForm((prev) => ({ ...prev, name: event.target.value }))
+            }
             value={form.name}
           />
           <input

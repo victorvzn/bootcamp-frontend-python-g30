@@ -20,7 +20,7 @@ const App = () => {
       
       <h1 className="text-2xl">Movies</h1>
 
-      <ul className="list-disc">
+      <ul className="list-disc list-inside pl-4">
         {movies.map(movie => {
           return (
             <li key={movie.id}>{movie.name}</li>

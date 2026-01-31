@@ -8,6 +8,9 @@ const App = () => {
     name: ''
   })
 
+  const [email, setEmail] = useState('') 
+  const [password, setPassword] = useState('') 
+
   useEffect(() => {
      fetchMovies()
       .then(data => setMovies(data))
@@ -32,8 +35,47 @@ const App = () => {
 
   // TODO: Eliminar las películas usando supabase agregando una política para eliminar registros.
 
+  const handleLogin = async (event) => {
+    event.preventDefault()
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    })
+
+    if (error) {
+      console.log(error.message)
+      return
+    }
+
+    console.log(data.session, data.user)
+  } 
+
   return (
     <div>
+      <section>
+        <h1 className="text-2xl">Login</h1>
+
+        <form onSubmit={handleLogin}>
+          <input
+            name="email"
+            placeholder="Email"
+            className="border"
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="border"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+          />
+          <input type="submit" value="Login" className="bg-blue-300" />
+        </form>
+      </section>
+
       <section>
         <h1 className="text-2xl">Movies</h1>
 

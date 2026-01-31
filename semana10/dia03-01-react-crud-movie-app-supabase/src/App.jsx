@@ -3,6 +3,9 @@ import { supabase } from "./lib/supabase"
 
 const App = () => {
   const [movies, setMovies] = useState([])
+  const [form, setForm] = useState({
+    name: ''
+  })
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -15,17 +18,26 @@ const App = () => {
       .then(data => setMovies(data))
   }, [])
 
+  const handleSave = async (event) => {
+    event.preventDefault()
+
+    console.log('Creando la película', form)
+  }
+
   return (
     <div>
       <section>
         <h1 className="text-2xl">Movies</h1>
 
-        <form>
+        <form onSubmit={handleSave}>
           <input
             type="text"
             name="name"
             className="border"
             placeholder="Nombre de la película"
+            required
+            onChange={(event) => setForm(event.target.value)}
+            value={form.name}
           />
           <input
             type="submit"

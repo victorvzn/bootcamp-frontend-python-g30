@@ -9,7 +9,7 @@ const App = () => {
       const response = await supabase.from('movies').select('*')
 
       return response.data
-    }  
+    }
 
     fetchMovies()
       .then(data => setMovies(data))

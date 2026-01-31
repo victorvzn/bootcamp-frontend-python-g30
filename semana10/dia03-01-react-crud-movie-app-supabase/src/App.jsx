@@ -33,7 +33,10 @@ const App = () => {
     console.log('Creando la película', form)
 
     const response = await supabase.from('movies').insert([
-      { name: form.name }
+      {
+        name: form.name,
+        // user_id: session.user.id
+      }
     ])
 
     fetchMovies()

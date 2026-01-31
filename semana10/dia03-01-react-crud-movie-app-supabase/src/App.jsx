@@ -9,11 +9,22 @@ const App = () => {
   })
 
   const [email, setEmail] = useState('') 
-  const [password, setPassword] = useState('') 
+  const [password, setPassword] = useState('')
+  const [session, setSession] = useState(null)
 
   useEffect(() => {
      fetchMovies()
       .then(data => setMovies(data))
+  }, [])
+
+  useEffect(() => {
+    const getInitialSession = async () => {
+      const { data, error } = await supabase.auth.getSession()
+
+      setSession(data.session)
+    }
+
+    getInitialSession()
   }, [])
 
   const handleSave = async (event) => {
@@ -49,31 +60,40 @@ const App = () => {
     }
 
     console.log(data.session, data.user)
+
+    setSession(data.session)
   } 
 
   return (
     <div>
       <section>
-        <h1 className="text-2xl">Login</h1>
+        {!session
+        ? (
+          <>
+            <h1 className="text-2xl">Login</h1>
 
-        <form onSubmit={handleLogin}>
-          <input
-            name="email"
-            placeholder="Email"
-            className="border"
-            onChange={(event) => setEmail(event.target.value)}
-            value={email}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            className="border"
-            onChange={(event) => setPassword(event.target.value)}
-            value={password}
-          />
-          <input type="submit" value="Login" className="bg-blue-300" />
-        </form>
+            <form onSubmit={handleLogin}>
+              <input
+                name="email"
+                placeholder="Email"
+                className="border"
+                onChange={(event) => setEmail(event.target.value)}
+                value={email}
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="border"
+                onChange={(event) => setPassword(event.target.value)}
+                value={password}
+              />
+              <input type="submit" value="Login" className="bg-blue-300" />
+            </form>
+          </>
+        ) : (
+          <h1 className="text-2xl">Bienvenido, {session?.user?.email}</h1>
+        )}
       </section>
 
       <section>

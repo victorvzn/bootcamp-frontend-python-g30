@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { supabase } from "./lib/supabase"
+import { fetchMovies } from "./services/movies"
 
 const App = () => {
   const [movies, setMovies] = useState([])
@@ -8,13 +9,7 @@ const App = () => {
   })
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await supabase.from('movies').select('*')
-
-      return response.data
-    }
-
-    fetchMovies()
+     fetchMovies()
       .then(data => setMovies(data))
   }, [])
 
@@ -22,6 +17,17 @@ const App = () => {
     event.preventDefault()
 
     console.log('Creando la película', form)
+
+    const response = await supabase.from('movies').insert([
+      { name: form.name }
+    ])
+
+    fetchMovies()
+      .then(data => setMovies(data))
+
+    setForm({
+      name: ''
+    })
   }
 
   return (

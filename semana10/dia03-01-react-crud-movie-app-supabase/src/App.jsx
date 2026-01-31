@@ -21,8 +21,17 @@ const App = () => {
         <h1 className="text-2xl">Movies</h1>
 
         <form>
-          <input type="text" name="name" className="border" placeholder="Nombre de la película" />
-          <input type="submit" value="Guardar" className="bg-orange-300" />
+          <input
+            type="text"
+            name="name"
+            className="border"
+            placeholder="Nombre de la película"
+          />
+          <input
+            type="submit"
+            value="Guardar"
+            className="bg-orange-300"
+          />
         </form>
 
         <h1 className="text-2xl">Lista de películas</h1>

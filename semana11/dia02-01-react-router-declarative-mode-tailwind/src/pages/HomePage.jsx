@@ -25,7 +25,7 @@ const HomePage = () => {
             <Link
               key={character.id}
               className="bg-yellow-300 rounded-lg p-4 flex flex-col justify-evenly items-center gap-1"
-              href={`/characters/${character.id}`}
+              to={`/characters/${character.id}`}
             >
               <img src={character.image} width={100} />
               <div className="font-bold text-xl">#{character.id}</div>

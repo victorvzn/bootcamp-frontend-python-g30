@@ -1,9 +1,19 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const ProductList = () => {
   const [products, setProducts] = useState([])
 
   // TODO: Leer los productos y listarlos desde el servicio de dummyjson (https://dummyjson.com/products).
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('https://dummyjson.com/products')
+
+      return response.json()
+    }
+
+    fetchProducts()
+      .then(data => setProducts(data.products))
+  }, [])
 
   return (
     <div>

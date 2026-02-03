@@ -1,7 +1,16 @@
 import { useProducts } from "../hooks/useProducts"
 
 const ProductList = () => {
-  const { products } = useProducts()
+  const { products, loading } = useProducts()
+
+  // Conditional rendering
+  if (loading) {
+    return (
+      <div>
+        Cargando productos...
+      </div>
+    )
+  }
 
   return (
     <div>

@@ -20,7 +20,7 @@ const HomePage = () => {
           return (
             <article
               key={character.id}
-              className="bg-yellow-300 rounded-lg p-4 flex flex-col justify-evenly items-center"
+              className="bg-yellow-300 rounded-lg p-4 flex flex-col justify-evenly items-center gap-1"
             >
               <img src={character.image} width={100} />
               <div className="font-bold text-xl">#{character.id}</div>

@@ -3,3 +3,9 @@ export const fetchCharacters = async () => {
 
   return await response.json()
 }
+
+export const getCharacter = async (id) => {
+  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`)
+
+  return await response.json()
+}

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
+import CharacterPage from './pages/CharacterPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,7 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/login' element={<LoginPage />} />
       <Route path='/register' element={<RegisterPage />} />
 
-      <Route path='/characters/:id' element={<RegisterPage />} />
+      <Route path='/characters/:id' element={<CharacterPage />} />
     </Routes>
   </BrowserRouter>,
 )

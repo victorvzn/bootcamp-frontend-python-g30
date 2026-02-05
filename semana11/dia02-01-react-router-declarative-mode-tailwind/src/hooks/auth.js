@@ -34,8 +34,15 @@ export function useAuth() {
     setUser(data?.session ?? null)
   }
 
+  const logout = async () => {
+    await supabase.auth.signOut()
+
+    setUser(null)
+  }
+
   return {
     user,
-    login
+    login,
+    logout
   }
 }

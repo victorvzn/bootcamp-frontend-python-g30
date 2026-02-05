@@ -21,6 +21,7 @@ const LayoutAdmin = () => {
 
           <nav className="flex gap-4">
             <Link to='/'>Home</Link>
+            <Link to='/movies'>Movies</Link>
             
             <span>Bienvenido, {user?.user.email}</span>
             <button onClick={handleLogout}>Logout</button>

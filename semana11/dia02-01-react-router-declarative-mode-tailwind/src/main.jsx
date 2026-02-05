@@ -9,6 +9,8 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import CharacterPage from './pages/CharacterPage.jsx'
 import LayoutBase from './layouts/LayoutBase.jsx'
 
+// TODO: Crear un layout solo para la ruta raiz(/) y el detalle de los personajes. Este layout debe contener una navegación con un título y algunos enlaces por ejemplo: Home, login, register
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>

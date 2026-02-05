@@ -7,14 +7,17 @@ import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import CharacterPage from './pages/CharacterPage.jsx'
+import LayoutBase from './layouts/LayoutBase.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/register' element={<RegisterPage />} />
+      <Route element={<LayoutBase />}>
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+      </Route>
 
+      <Route path='/' element={<HomePage />} />
       <Route path='/characters/:id' element={<CharacterPage />} />
     </Routes>
   </BrowserRouter>,

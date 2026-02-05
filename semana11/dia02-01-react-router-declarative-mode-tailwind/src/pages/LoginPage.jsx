@@ -1,14 +1,33 @@
 import { useState } from "react"
+import { useAuth } from "../hooks/auth"
+import { useNavigate } from "react-router"
 
 const LoginPage = () => {
+  const { login, user } = useAuth()
+
+  const navigate = useNavigate()
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const handleLogin = async (event) => {
+    event.preventDefault()
+
+    await login(email, password)
+
+    console.log(user?.email, user)
+
+    if (user) {
+      // redirigimos a la ruta /
+      navigate('/')
+    }
+  }
 
   return (
     <>
       <h2>Login son supabase</h2>
 
-      <form>
+      <form onSubmit={handleLogin}>
         <label>
           Email
           <input

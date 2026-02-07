@@ -15,6 +15,12 @@ const Counter = () => {
 
       <div className="flex items-center gap-2">
         <button
+          className="bg-orange-400 p-2 min-w-14 rounded font-bold cursor-pointer"
+          onClick={() => dispatch(incrementBy(-15))}
+        >
+          -15
+        </button>
+        <button
           className="bg-green-400 p-2 min-w-14 rounded font-bold cursor-pointer"
           onClick={() => dispatch(decrement())}
         >

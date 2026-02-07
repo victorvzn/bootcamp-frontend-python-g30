@@ -1,5 +1,11 @@
+import { useDispatch } from 'react-redux'
+
+import { addToCart } from '../store/cart'
+
 const ProductList = ({ products }) => {
   // TODO: Ejecutar la acción addToCart desde el slice y pasarle el objeto del producto seleccionado para que lo muestre en consola
+
+  const dispatch = useDispatch()
 
   return (
     <section className="flex flex-col p-4">
@@ -14,8 +20,10 @@ const ProductList = ({ products }) => {
             >
               <img src={product.thumbnail} alt={product.title} />
               <p className="font-bold text-center">{product.title}</p>
+              <p className="font-bold text-center">S/ {product.price}</p>
               <button
                 className="bg-blue-400 p-2 min-w-36 rounded-lg cursor-pointer text-white font-bold hover:bg-blue-500 duration-300"
+                onClick={() => dispatch(addToCart(product))}
               >
                 Add to cart
               </button>

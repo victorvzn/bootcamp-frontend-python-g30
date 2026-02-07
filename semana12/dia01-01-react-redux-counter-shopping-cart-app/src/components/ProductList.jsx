@@ -11,7 +11,11 @@ const ProductList = ({ products }) => {
             <article
               key={product.id}
             >
-
+              <img src={product.thumbnail} alt={product.title} />
+              <p>{product.title}</p>
+              <button>
+                Add to cart
+              </button>
             </article>
           )
         })}

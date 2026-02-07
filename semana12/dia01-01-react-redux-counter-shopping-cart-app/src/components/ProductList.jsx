@@ -1,5 +1,5 @@
 const ProductList = ({ products }) => {
-
+  // TODO: Ejecutar la acción addToCart desde el slice y pasarle el objeto del producto seleccionado para que lo muestre en consola
 
   return (
     <section className="flex flex-col p-4">

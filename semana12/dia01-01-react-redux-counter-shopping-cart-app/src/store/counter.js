@@ -14,10 +14,13 @@ export const counterSlice = createSlice({
       // state = state + 1
       return state += 1
     },
-    decrement: (state) => state -= 1
+    decrement: (state) => state -= 1,
+    incrementBy: (state, action) => state + action.payload
   } 
 })
 
-export const { increment, decrement } = counterSlice.actions
+// Exportamos las acciones
+export const { increment, decrement, incrementBy } = counterSlice.actions
 
+// Exportando el estado inicial y a los reducers del slide
 export default counterSlice.reducer

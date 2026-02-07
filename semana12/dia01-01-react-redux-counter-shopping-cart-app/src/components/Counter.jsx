@@ -1,4 +1,4 @@
-import { increment, decrement } from "../store/counter"
+import { increment, decrement, incrementBy } from "../store/counter"
 
 import { useSelector, useDispatch } from "react-redux"
 
@@ -6,6 +6,8 @@ const Counter = () => {
   const counter = useSelector(state => state.counter)
 
   const dispatch = useDispatch()
+
+  // TODO: Añadir el botón -15 usando las acciones de nuestro slice
 
   return (
     <div className="border rounded p-2 flex flex-col gap-2 items-center">
@@ -26,6 +28,12 @@ const Counter = () => {
           onClick={() => dispatch(increment())}
         >
           +1
+        </button>
+        <button
+          className="bg-orange-400 p-2 min-w-14 rounded font-bold cursor-pointer"
+          onClick={() => dispatch(incrementBy(5))}
+        >
+          +5
         </button>
       </div>
     </div>

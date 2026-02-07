@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Counter from "./components/Counter"
 import ProductList from "./components/ProductList"
+import ShoppingCart from "./components/ShoppingCart"
 
 const App = () => {
   // TODO: Listar los productos de la siguiente api "https://dummyjson.com/products" guardenlo en un useState. No usar Redux por el momento.
@@ -20,11 +21,9 @@ const App = () => {
   return (
     <main className="flex flex-col gap-8 p-4">
       <section>
+        <ShoppingCart />
 
         <ProductList products={products} />
-
-        {/* <ShoppingCart /> */}
-
       </section>
 
       <Counter />

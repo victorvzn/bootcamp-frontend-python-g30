@@ -1,12 +1,27 @@
+import { useEffect, useState } from "react"
 import Counter from "./components/Counter"
 import ProductList from "./components/ProductList"
 
 const App = () => {
+  // TODO: Listar los productos de la siguiente api "https://dummyjson.com/products" guardenlo en un useState. No usar Redux por el momento.
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('https://dummyjson.com/products')
+
+      return await response.json()
+    }
+
+    fetchProducts()
+      .then(data => setProducts(data))
+  }, [])
+
   return (
     <main className="flex flex-col gap-8 p-4">
       <section>
 
-        <ProductList />
+        <ProductList products={products} />
 
         {/* <ShoppingCart /> */}
 

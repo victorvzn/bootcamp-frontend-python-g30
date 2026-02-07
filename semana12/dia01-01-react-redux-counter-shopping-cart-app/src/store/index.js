@@ -6,7 +6,7 @@ import counterReducer from './counter.js'
 
 export const store = configureStore({
   // Aquí va la configuración y los reducers
-  reduce: {
+  reducer: {
     counter: counterReducer,
   }
 })

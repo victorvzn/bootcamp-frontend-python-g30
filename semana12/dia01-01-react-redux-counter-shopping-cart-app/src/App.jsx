@@ -14,7 +14,7 @@ const App = () => {
     }
 
     fetchProducts()
-      .then(data => setProducts(data))
+      .then(data => setProducts(data.products))
   }, [])
 
   return (

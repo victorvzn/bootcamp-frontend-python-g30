@@ -49,6 +49,17 @@ export const CartSlice = createSlice({
       // Va lo lógica para remover un producto del carrito
       console.log('removeFromCart', action)
       // TODO: remover el producto del carrito de compras con el id del producto a eliminar
+      const productId = action.payload
+
+      return state.filter(
+        product => product.id !== productId
+      )
+    },
+    clearCart: (state) => {
+      // Va la lógica para limpiar el carrito de compras
+      console.log('clearCart')
+      // TODO: Limpiar el carrito de compras
+      return []
     }
   }
 })
@@ -56,4 +67,4 @@ export const CartSlice = createSlice({
 // Exportar el estado inicial y los reducers del slice
 export default CartSlice.reducer
 
-export const { addToCart, removeFromCart } = CartSlice.actions
+export const { addToCart, removeFromCart, clearCart } = CartSlice.actions

@@ -1,8 +1,10 @@
 import { useSelector, useDispatch } from "react-redux"
 
-import { removeFromCart } from '../store/cart.js'
+import { removeFromCart, clearCart } from '../store/cart.js'
 
-// TODO: Renderizar los productos añadidos al carrito de compras según la maquetación de abajo
+// DONE: Renderizar los productos añadidos al carrito de compras según la maquetación de abajo
+
+// TODO: Calcular el total a pagar en el carrito de compras sumando la multiplicación del precio y su cantidad.
 
 const ShoppingCart = () => {
   const cart = useSelector(state => state.cart)
@@ -16,6 +18,7 @@ const ShoppingCart = () => {
       <div className="mb-2">
         <button
           className="bg-red-400 p-2 min-w-36 rounded-lg cursor-pointer text-white font-bold hover:bg-red-500 duration-300 w-full"
+          onClick={() => dispatch(clearCart())}
         >
           Limpiar carrito
         </button>

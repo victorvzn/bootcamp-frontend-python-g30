@@ -36,7 +36,12 @@ const ShoppingCart = () => {
 
   return (
     <section className="w-56 p-2">
-      <h3 className="text-2xl mb-2 text-center">ShoppingCart</h3>
+      <h3 className="text-2xl mb-2 text-center relative">
+        Shopping Cart
+        <div className="bg-red-600 text-white w-6 h-6 text-base rounded-full absolute right-0 top-0">
+          {cart.length}
+        </div>
+      </h3>
 
       <div className="mb-2">
         <button

@@ -15,10 +15,34 @@ export const CartSlice = createSlice({
 
       const newProduct = action.payload
 
+      // Validar cuando el producto existe en el carrito de compras
+      const productInCartIndex = state.findIndex(
+        product => product.id === newProduct.id
+      ) // Si encuentra el elemento devuelve su indice y si no devuelve -1
+
+      if (productInCartIndex >= 0) {
+        // Encontramos el productos e incrementamos en uno su propiedad quantity
+        return state.map(
+          product => {
+            if (product.id === newProduct.id) {
+              return {
+                ...product,
+                quantity: product.quantity + 1
+              }
+            }
+
+            return product
+          }
+        )
+      }
+
       // Cuando el producto es nuevo en el carrito lo agregamos al estado directamente
       return [
         ...state,
-        newProduct
+        {
+          ...newProduct,
+          quantity: 1
+        }
       ]
     }
   }

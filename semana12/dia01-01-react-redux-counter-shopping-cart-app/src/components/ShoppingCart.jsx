@@ -25,7 +25,7 @@ const ShoppingCart = () => {
               className="flex flex-col gap-2 font-bold bg-slate-200 p-2 rounded-lg shadow"
             >
               <span>{product.title}</span>
-              <span>S/ 0.00 (Qty: 1)</span>
+              <span>S/ 0.00 (Qty: {product.quantity})</span>
               <button
                 className="bg-red-400 p-2 rounded-lg cursor-pointer text-white font-bold hover:bg-red-500 duration-300"
               >

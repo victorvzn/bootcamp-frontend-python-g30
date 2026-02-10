@@ -4,7 +4,7 @@ import { removeFromCart, clearCart } from '../store/cart.js'
 
 // DONE: Renderizar los productos añadidos al carrito de compras según la maquetación de abajo
 
-// TODO: Calcular el total a pagar en el carrito de compras sumando la multiplicación del precio y su cantidad.
+// TODO: Calcular el total a pagar en el carrito de compras sumando el precio y su cantidad.
 
 const ShoppingCart = () => {
   const cart = useSelector(state => state.cart)

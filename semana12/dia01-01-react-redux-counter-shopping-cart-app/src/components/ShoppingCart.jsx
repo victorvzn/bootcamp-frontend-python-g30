@@ -18,17 +18,22 @@ const ShoppingCart = () => {
       </div>
 
       <ul className="flex flex-col gap-4">
-        <li
-          className="flex flex-col gap-2 font-bold bg-slate-200 p-2 rounded-lg shadow"
-        >
-          <span>title</span>
-          <span>S/ 0.00 (Qty: 1)</span>
-          <button
-            className="bg-red-400 p-2 rounded-lg cursor-pointer text-white font-bold hover:bg-red-500 duration-300"
-          >
-            ❌
-          </button>
-        </li>
+        {cart.map(product => {
+          return (
+            <li
+              key={product.id}
+              className="flex flex-col gap-2 font-bold bg-slate-200 p-2 rounded-lg shadow"
+            >
+              <span>{product.title}</span>
+              <span>S/ 0.00 (Qty: 1)</span>
+              <button
+                className="bg-red-400 p-2 rounded-lg cursor-pointer text-white font-bold hover:bg-red-500 duration-300"
+              >
+                ❌
+              </button>
+            </li>
+          )
+        })}
       </ul>
 
       <div className="mt-4 pt-4 font-bold bg-amber-100 px-4 py-2 flex justify-between rounded-lg">

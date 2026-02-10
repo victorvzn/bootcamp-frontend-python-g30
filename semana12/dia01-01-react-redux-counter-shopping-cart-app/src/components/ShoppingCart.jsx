@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+
+import { removeFromCart } from '../store/cart.js'
 
 // TODO: Renderizar los productos añadidos al carrito de compras según la maquetación de abajo
 
 const ShoppingCart = () => {
   const cart = useSelector(state => state.cart)
+
+  const dispatch = useDispatch()
 
   return (
     <section className="w-56 p-2">
@@ -28,6 +32,7 @@ const ShoppingCart = () => {
               <span>S/ 0.00 (Qty: {product.quantity})</span>
               <button
                 className="bg-red-400 p-2 rounded-lg cursor-pointer text-white font-bold hover:bg-red-500 duration-300"
+                onClick={() => dispatch(removeFromCart(product.id))}
               >
                 ❌
               </button>
